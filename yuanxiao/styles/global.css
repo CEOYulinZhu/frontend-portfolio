@@ -1,0 +1,202 @@
+:root {
+    --primary-color: #e74c3c;
+    --secondary-color: #f1c40f;
+    --text-color: #2c3e50;
+    --bg-color: #fff5f5;
+    --lantern-red: #ff4d4d;
+    --lantern-gold: #ffd700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.header {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1a1a2e, #16213e);
+    overflow: hidden;
+}
+
+.hero-section {
+    position: relative;
+    height: calc(100vh - 80px);
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.footer {
+    background: linear-gradient(to bottom, #1a1a2e, #16213e);
+    color: #fff;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(231, 76, 60, 0.3) 25%,
+            rgba(231, 76, 60, 0.5) 50%,
+            rgba(231, 76, 60, 0.3) 75%,
+            transparent 100%);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-logo .logo-icon {
+    width: 32px;
+    height: 32px;
+    background-color: var(--lantern-red);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.6);
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+.footer-logo .logo-text {
+    font-size: 1.5rem;
+    color: var(--lantern-gold);
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+}
+
+.contact:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.wechat-icon {
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    position: relative;
+}
+
+.wechat-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg t='1709711132165' class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='4' %3E%3Cpath d='M692.313043 347.269565c11.130435 0 22.26087 0 33.391305 2.226087C696.765217 204.8 540.93913 95.721739 362.852174 95.721739c-198.121739 0-360.626087 133.565217-360.626087 302.191304 0 97.947826 53.426087 178.643478 142.469565 242.086957l-35.617391 106.852174 124.434783-62.46087c44.521739 8.904348 80.139130 17.808696 124.434782 17.808696 11.130435 0 22.26087 0 33.391305-2.226087-6.678261-24.486957-11.130435-48.973913-11.130435-75.686956 0-155.826087 133.565217-276.478261 311.930435-276.478261z m-195.895652-97.947826c26.713043 0 44.521739 17.808696 44.521739 44.521739 0 26.713043-17.808696 44.521739-44.521739 44.521739-26.713043 0-53.426087-17.808696-53.426087-44.521739 0-26.713043 26.713043-44.521739 53.426087-44.521739zM249.182609 338.365217c-26.713043 0-53.426087-17.808696-53.426087-44.521739 0-26.713043 26.713043-44.521739 53.426087-44.521739 26.713043 0 44.521739 17.808696 44.521739 44.521739 0 26.713043-17.808696 44.521739-44.521739 44.521739z m827.826087 309.704348c0-142.469565-142.469565-258.669565-302.191305-258.669565-169.73913 0-302.191304 116.2-302.191304 258.669565 0 142.469565 133.565217 258.669565 302.191304 258.669565 35.617391 0 71.234783-8.904348 106.852174-17.808696l97.947826 53.426087-26.713044-89.043478c71.234783-53.426087 124.434783-124.434783 124.434783-205.243478z m-400.139131-44.521739c-17.808696 0-35.617391-17.808696-35.617391-35.617391 0-17.808696 17.808696-35.617391 35.617391-35.617392 26.713043 0 44.521739 17.808696 44.521739 35.617392 0 17.808696-17.808696 35.617391-44.521739 35.617391z m195.895652 0c-17.808696 0-35.617391-17.808696-35.617391-35.617391 0-17.808696 17.808696-35.617391 35.617391-35.617392 26.713043 0 44.521739 17.808696 44.521739 35.617392 0 17.808696-17.808696 35.617391-44.521739 35.617391z' fill='%23ffffff' p-id='5'%3E%3C/path%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.wechat {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 15px rgba(255, 77, 77, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 0 25px rgba(255, 77, 77, 0.8);
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .footer-brand {
+        align-items: center;
+    }
+
+    .footer-logo .logo-text {
+        font-size: 1.3rem;
+    }
+
+    .footer-logo .logo-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .copyright {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 1.2rem 0;
+    }
+
+    .contact {
+        padding: 0.3rem 0.6rem;
+    }
+
+    .wechat {
+        font-size: 0.85rem;
+    }
+}
+
+/* 响应式基础设置 */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}

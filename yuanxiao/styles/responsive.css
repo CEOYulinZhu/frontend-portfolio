@@ -1,0 +1,89 @@
+/* 桌面端 */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .hero-section {
+        padding: 2rem 0;
+    }
+
+    .moon {
+        width: 150px;
+        height: 150px;
+        right: 80px;
+        top: 100px;
+    }
+}
+
+/* 平板端 */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    .hero-section {
+        padding: 1.5rem 0;
+    }
+
+    .moon {
+        width: 120px;
+        height: 120px;
+        right: 60px;
+        top: 120px;
+    }
+}
+
+/* 移动端 */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero-section {
+        padding: 1rem 0;
+    }
+
+    .moon {
+        width: 80px;
+        height: 80px;
+        right: 30px;
+        top: 100px;
+    }
+
+    .navbar-collapse {
+        background-color: rgba(26, 26, 46, 0.95);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+
+    .nav-menu {
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0;
+        margin: 0.5rem 0;
+        display: block;
+    }
+}
+
+/* 小屏幕设备 */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .moon {
+        width: 60px;
+        height: 60px;
+        right: 20px;
+        top: 90px;
+    }
+
+    .section {
+        padding: 2rem 0;
+    }
+}

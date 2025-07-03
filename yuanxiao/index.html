@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>元夕灯语 - 元宵节主题网站</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/riddles.css">
+    <link rel="stylesheet" href="styles/game.css">
+    <link rel="stylesheet" href="styles/fillings.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/wishes.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a href="#" class="logo">
+                    <div class="logo-icon"></div>
+                    元夕灯语
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                    aria-controls="navMenu" aria-expanded="false" aria-label="切换导航">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <div class="nav-menu ms-auto">
+                        <a class="nav-link active" href="#home" data-section="home">
+                            <span class="nav-text">首页</span>
+                        </a>
+                        <a class="nav-link" href="#riddles" data-section="riddles">
+                            <span class="nav-text">灯谜会</span>
+                        </a>
+                        <a class="nav-link" href="#game" data-section="game">
+                            <span class="nav-text">接汤圆</span>
+                        </a>
+                        <a class="nav-link" href="#wishes" data-section="wishes">
+                            <span class="nav-text">祈福墙</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="hero-section">
+            <div id="lanternContainer"></div>
+            <div class="moon"></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="section">
+            <div class="home-content">
+                <div class="home-text">
+                    <h1 class="title">元夕灯语</h1>
+                    <p class="subtitle">共赏花灯闹元宵，共叙团圆话美好</p>
+                    <div class="features-wrapper">
+                        <div class="features">
+                            <div class="feature-item">
+                                <i class="feature-icon riddle-icon"></i>
+                                <h3>猜灯谜</h3>
+                                <p>体验传统灯谜文化，展现智慧才华</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="feature-icon game-icon"></i>
+                                <h3>接汤圆</h3>
+                                <p>接住汤圆，品味甜蜜团圆</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="feature-icon wish-icon"></i>
+                                <h3>祈福墙</h3>
+                                <p>写下新春祝福，传递温暖心愿</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#riddles" class="btn btn-primary">开始猜灯谜</a>
+                        <a href="#game" class="btn btn-outline">去接汤圆</a>
+                    </div>
+                </div>
+                <div class="home-decoration">
+                    <div class="decoration-container">
+                        <div class="decoration-circle"></div>
+                        <div class="decoration-text">
+                            <span>元</span>
+                            <span>宵</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="riddles" class="section">
+            <div class="riddles-content">
+                <h2 class="section-title">灯谜会</h2>
+                <p class="section-subtitle">品味传统文化，展现智慧才华</p>
+                <div class="riddles-container">
+                    <div class="riddle-card card">
+                        <div class="riddle-header">
+                            <span class="riddle-number">谜题 1/10</span>
+                            <span class="riddle-type">字谜</span>
+                        </div>
+                        <div class="riddle-body">
+                            <p class="riddle-question">红红圆圆像个球，热热甜甜真美味（打一食物）</p>
+                            <div class="riddle-hint">提示：元宵节必吃的美食</div>
+                            <div class="riddle-controls">
+                                <button class="btn btn-outline btn-hint">查看提示</button>
+                                <button class="btn btn-primary btn-answer">查看答案</button>
+                            </div>
+                            <div class="riddle-answer hidden">
+                                <div class="answer-content">
+                                    <h4>答案：汤圆</h4>
+                                    <p class="answer-explanation">汤圆象征着团圆，是元宵节传统美食，形状圆圆的，口感香甜。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="riddle-footer">
+                            <button class="btn btn-icon btn-prev" disabled>
+                                <i class="arrow-left"></i>
+                                上一题
+                            </button>
+                            <button class="btn btn-icon btn-next">
+                                下一题
+                                <i class="arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="game" class="section">
+            <div class="game-content">
+                <h2 class="section-title">接汤圆</h2>
+                <p class="section-subtitle">用碗接住美味汤圆，品味甜蜜团圆</p>
+                <div class="game-rules">
+                    <h3>游戏规则</h3>
+                    <div class="rules-content">
+                        <p>1. 电脑端使用键盘左右方向键控制碗的移动</p>
+                        <p>2. 手机端触摸屏幕左右区域控制碗的移动</p>
+                        <p>3. 接住从上方掉落的不同馅料汤圆</p>
+                        <p>4. 连续接住汤圆可以获得连击加成</p>
+                        <p>5. 特殊汤圆会触发强力效果：</p>
+                        <div class="special-effects">
+                            <div class="effect-item">
+                                <span class="effect-name">黑芝麻：</span>
+                                <span class="effect-desc">触发双倍分数30秒</span>
+                            </div>
+                            <div class="effect-item">
+                                <span class="effect-name">花生：</span>
+                                <span class="effect-desc">碗变大15秒</span>
+                            </div>
+                            <div class="effect-item">
+                                <span class="effect-name">红豆：</span>
+                                <span class="effect-desc">减缓汤圆下落速度20秒</span>
+                            </div>
+                            <div class="effect-item">
+                                <span class="effect-name">莲蓉：</span>
+                                <span class="effect-desc">清除所有汤圆并得分</span>
+                            </div>
+                        </div>
+                        <p>6. 累计分数提升等级，难度随等级提升</p>
+                    </div>
+                </div>
+                <div class="game-container">
+                    <div class="game-area">
+                        <div class="game-canvas-container">
+                            <canvas id="gameCanvas"></canvas>
+                            <div class="combo-display"></div>
+                        </div>
+                        <div class="game-buttons">
+                            <button class="btn btn-primary" id="startGame">开始游戏</button>
+                            <button class="btn btn-outline" id="resetGame">重新开始</button>
+                        </div>
+                    </div>
+                    <div class="game-controls">
+                        <div class="control-group">
+                            <h3>游戏状态</h3>
+                            <div class="game-status">
+                                <div class="status-item">
+                                    <span class="status-label">当前分数</span>
+                                    <span class="score status-value">0</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">当前等级</span>
+                                    <span class="level status-value">1</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">连击次数</span>
+                                    <span class="combo status-value">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <h3>特效状态</h3>
+                            <div class="effects-container">
+                                <div class="effect-indicator" data-effect="double_score">双倍分数</div>
+                                <div class="effect-indicator" data-effect="slow_motion">减速</div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <h3>馅料预览</h3>
+                            <div class="filling-preview">
+                                <div class="filling-preview-item">
+                                    <div class="filling-preview-icon black-sesame">
+                                        <div class="filling-outer"></div>
+                                        <div class="filling-inner"></div>
+                                    </div>
+                                    <div class="filling-preview-info">
+                                        <span class="filling-preview-name">黑芝麻</span>
+                                        <span class="filling-preview-effect">双倍分数</span>
+                                    </div>
+                                </div>
+                                <div class="filling-preview-item">
+                                    <div class="filling-preview-icon peanut">
+                                        <div class="filling-outer"></div>
+                                        <div class="filling-inner"></div>
+                                    </div>
+                                    <div class="filling-preview-info">
+                                        <span class="filling-preview-name">花生</span>
+                                        <span class="filling-preview-effect">碗变大</span>
+                                    </div>
+                                </div>
+                                <div class="filling-preview-item">
+                                    <div class="filling-preview-icon red-bean">
+                                        <div class="filling-outer"></div>
+                                        <div class="filling-inner"></div>
+                                    </div>
+                                    <div class="filling-preview-info">
+                                        <span class="filling-preview-name">红豆</span>
+                                        <span class="filling-preview-effect">减速</span>
+                                    </div>
+                                </div>
+                                <div class="filling-preview-item">
+                                    <div class="filling-preview-icon lotus">
+                                        <div class="filling-outer"></div>
+                                        <div class="filling-inner"></div>
+                                    </div>
+                                    <div class="filling-preview-info">
+                                        <span class="filling-preview-name">莲蓉</span>
+                                        <span class="filling-preview-effect">清除</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="wishes" class="section">
+            <div class="wishes-content">
+                <h2 class="section-title">祈福墙</h2>
+                <p class="section-subtitle">写下新春祝福，传递温暖心愿</p>
+
+                <div class="wishes-container">
+                    <!-- 添加祝福表单 -->
+                    <div class="wish-form card">
+                        <h3>写下您的祝福</h3>
+                        <form id="wishForm">
+                            <div class="form-group">
+                                <label for="wishAuthor">您的名字</label>
+                                <input type="text" id="wishAuthor" class="form-control" placeholder="请输入您的名字"
+                                    maxlength="10" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="wishContent">祝福内容</label>
+                                <textarea id="wishContent" class="form-control" placeholder="写下您的祝福语..." maxlength="50"
+                                    required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>选择祝福卡样式</label>
+                                <div class="wish-style-selector">
+                                    <div class="style-option active" data-style="style1">
+                                        <div class="style-preview style1"></div>
+                                    </div>
+                                    <div class="style-option" data-style="style2">
+                                        <div class="style-preview style2"></div>
+                                    </div>
+                                    <div class="style-option" data-style="style3">
+                                        <div class="style-preview style3"></div>
+                                    </div>
+                                    <div class="style-option" data-style="style4">
+                                        <div class="style-preview style4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">发送祝福</button>
+                        </form>
+                    </div>
+
+                    <!-- 祝福墙展示区 -->
+                    <div class="wish-wall">
+                        <div class="wish-cards">
+                            <!-- 祝福卡片将通过JavaScript动态添加 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon"></div>
+                        <span class="logo-text">元夕灯语</span>
+                    </div>
+                    <div class="copyright">
+                        <span class="year"></span> © 元夕灯语 | 开发者：祝钰霖
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <div class="contact">
+                        <i class="wechat-icon"></i>
+                        <span class="wechat">微信：19108427390</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="js/utils/loader.js" type="module"></script>
+    <script src="js/utils/animator.js" type="module"></script>
+    <script src="js/lantern.js" type="module"></script>
+    <script src="js/navigation.js" type="module"></script>
+    <script src="js/riddle.js" type="module"></script>
+    <script src="js/game.js" type="module"></script>
+    <script src="js/wishes.js" type="module"></script>
+    <script>
+        // 自动更新页脚年份
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearElement = document.querySelector('.footer .year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+
+</html>

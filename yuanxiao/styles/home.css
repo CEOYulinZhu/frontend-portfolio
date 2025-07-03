@@ -1,0 +1,530 @@
+/* 首页样式 */
+.home-content {
+    padding: 2rem 2rem;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1800px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+/* 文字部分样式 */
+.home-text {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 4rem;
+    line-height: 1.6;
+}
+
+/* 特色功能区域 */
+.features-wrapper {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin: .5rem auto;
+    width: 100%;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(231, 76, 60, 0.1);
+    border: 1px solid rgba(231, 76, 60, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(231, 76, 60, 0.15);
+    border-color: rgba(231, 76, 60, 0.3);
+}
+
+.feature-item:hover::before {
+    opacity: 1;
+}
+
+.feature-icon {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 4px 8px rgba(231, 76, 60, 0.2));
+}
+
+.feature-item:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 6px 12px rgba(231, 76, 60, 0.3));
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: bold;
+    position: relative;
+}
+
+.feature-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color);
+    opacity: 0.5;
+    transition: width 0.4s ease;
+}
+
+.feature-item:hover h3::after {
+    width: 80px;
+    opacity: 1;
+}
+
+.feature-item p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* 右上角装饰区域 */
+.home-decoration {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.decoration-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+/* 创建装饰性元素 */
+.decoration-container::before {
+    content: '福';
+    position: absolute;
+    font-size: 7rem;
+    font-weight: bold;
+    color: rgba(231, 76, 60, 0.12);
+    animation: float 6s ease-in-out infinite;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'STKaiti', 'KaiTi', serif;
+    -webkit-text-stroke: 1px rgba(231, 76, 60, 0.2);
+}
+
+.decoration-circle {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 2px solid rgba(231, 76, 60, 0.12);
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+}
+
+.decoration-container::after {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle at center,
+            rgba(231, 76, 60, 0.12) 0%,
+            rgba(231, 76, 60, 0.06) 50%,
+            transparent 70%);
+    border-radius: 50%;
+    animation: glow 4s ease-in-out infinite;
+}
+
+.decoration-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.decoration-text span {
+    position: absolute;
+    font-size: 1.8rem;
+    font-family: 'STXingkai', 'STKaiti', serif;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(231, 76, 60, 0.2);
+    opacity: 0;
+    animation: fadeInOut 4s ease-in-out infinite;
+}
+
+.decoration-text span:first-child {
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0s;
+}
+
+.decoration-text span:last-child {
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 2s;
+}
+
+/* 图标样式 */
+.riddle-icon {
+    background-image: url('../assets/icons/riddle.svg');
+}
+
+.game-icon {
+    background-image: url('../assets/icons/game.svg');
+}
+
+.wish-icon {
+    background-image: url('../assets/icons/wish.svg');
+}
+
+/* 响应式调整 */
+@media (min-width: 1600px) {
+    .features {
+        gap: 3.5rem;
+    }
+
+    .feature-item {
+        padding: 3rem 2.5rem;
+        min-height: 320px;
+    }
+
+    .feature-icon {
+        width: 85px;
+        height: 85px;
+    }
+
+    .feature-item h3 {
+        font-size: 1.7rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .feature-item p {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 1400px) {
+    .home-text {
+        width: 85%;
+    }
+
+    .home-decoration {
+        width: 250px;
+        height: 250px;
+    }
+
+    .decoration-container::before {
+        font-size: 6rem;
+    }
+
+    .decoration-circle {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .home-text {
+        width: 100%;
+        max-width: 900px;
+        margin-bottom: 1rem;
+    }
+
+    .home-decoration {
+        width: 220px;
+        height: 220px;
+        top: -20px;
+        right: -20px;
+    }
+
+    .decoration-container::before {
+        font-size: 5rem;
+    }
+
+    .decoration-circle {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 992px) {
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 800px;
+    }
+
+    .feature-item {
+        min-height: 220px;
+        padding: 1.8rem;
+    }
+
+    .home-decoration {
+        width: 200px;
+        height: 200px;
+        top: -30px;
+        right: -10px;
+        opacity: 0.8;
+    }
+
+    .decoration-container::before {
+        font-size: 5rem;
+        color: rgba(231, 76, 60, 0.08);
+    }
+
+    .decoration-circle {
+        width: 130px;
+        height: 130px;
+        border-color: rgba(231, 76, 60, 0.08);
+    }
+
+    .decoration-container::after {
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(circle at center,
+                rgba(231, 76, 60, 0.08) 0%,
+                rgba(231, 76, 60, 0.04) 50%,
+                transparent 70%);
+    }
+
+    .decoration-text span {
+        font-size: 1.6rem;
+        color: rgba(231, 76, 60, 0.6);
+    }
+}
+
+@media (max-width: 768px) {
+    .home-content {
+        padding: 2rem 1rem;
+    }
+
+    .home-decoration {
+        width: 160px;
+        height: 160px;
+        top: -40px;
+        right: 0;
+        opacity: 0.6;
+        transform: rotate(-10deg);
+    }
+
+    .decoration-container::before {
+        font-size: 4rem;
+        color: rgba(231, 76, 60, 0.06);
+        animation: float 8s ease-in-out infinite;
+    }
+
+    .decoration-circle {
+        width: 100px;
+        height: 100px;
+        border-color: rgba(231, 76, 60, 0.06);
+    }
+
+    .decoration-container::after {
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(circle at center,
+                rgba(231, 76, 60, 0.06) 0%,
+                rgba(231, 76, 60, 0.03) 50%,
+                transparent 70%);
+    }
+
+    .decoration-text span {
+        font-size: 1.3rem;
+        color: rgba(231, 76, 60, 0.5);
+    }
+
+    .features-wrapper {
+        padding: 0 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 500px;
+        margin: 2rem auto;
+    }
+
+    .feature-item {
+        min-height: auto;
+        padding: 2rem 1.5rem;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1.5rem;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-decoration {
+        width: 140px;
+        height: 140px;
+        top: -45px;
+        right: -10px;
+        opacity: 0.5;
+    }
+
+    .decoration-container::before {
+        font-size: 3.5rem;
+    }
+
+    .decoration-circle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .decoration-container::after {
+        width: 70px;
+        height: 70px;
+    }
+
+    .decoration-text span {
+        font-size: 1.2rem;
+    }
+}
+
+/* CTA按钮容器样式 */
+.cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 2rem;
+}
+
+/* 装饰动画 */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        filter: brightness(1);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    50% {
+        filter: brightness(1.2);
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+    }
+}
+
+@keyframes fadeInOut {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
