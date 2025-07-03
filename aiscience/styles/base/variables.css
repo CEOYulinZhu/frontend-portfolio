@@ -1,0 +1,45 @@
+:root {
+    /* 颜色变量 */
+    /* 主色调 - 深邃科技蓝 */
+    --primary-color: #0A192F;
+    --accent-color: #64FFDA;
+
+    /* 背景色 */
+    --bg-color: #0A192F;
+    --bg-light: #112240;
+    --bg-lighter: #233554;
+
+    /* 文本颜色 */
+    --text-color: #8892B0;
+    --text-light: #CCD6F6;
+    --text-lighter: #E6F1FF;
+
+    /* 渐变色 */
+    --gradient-primary: linear-gradient(120deg, #0A192F, #233554);
+    --gradient-accent: linear-gradient(120deg, #64FFDA, #00B4D8);
+    --gradient-dark: linear-gradient(120deg, #091627, #0A192F);
+
+    /* 特效颜色 */
+    --glow-color: rgba(100, 255, 218, 0.1);
+    --shadow-color: rgba(2, 12, 27, 0.7);
+
+    /* 间距变量 */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* 字体变量 */
+    --font-main: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    --font-heading: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+
+    /* 动画变量 */
+    --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-medium: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* 布局变量 */
+    --max-width: 1200px;
+    --border-radius: 20px;
+    --card-shadow: 0 20px 40px var(--shadow-color);
+}

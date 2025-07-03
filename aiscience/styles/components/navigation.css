@@ -1,0 +1,207 @@
+.journey-map {
+    position: fixed;
+    right: var(--spacing-xl);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+/* 导航轨道 - 背景线 */
+.journey-track {
+    position: relative;
+}
+
+.journey-track::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    bottom: 8px;
+    left: 50%;
+    width: 2px;
+    background: var(--bg-lighter);
+    transform: translateX(-50%);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* 活跃轨道 - 高亮线 */
+.journey-track::after {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    width: 2px;
+    background: var(--accent-color);
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: height 0.5s ease, opacity 0.3s ease;
+    box-shadow: 0 0 10px var(--glow-color);
+    z-index: -1;
+}
+
+/* 根据访问进度更新连接线 */
+.journey-track[data-progress="1"]::after {
+    height: var(--spacing-xl);
+    opacity: 0.8;
+}
+
+.journey-track[data-progress="2"]::after {
+    height: calc(var(--spacing-xl) * 2);
+    opacity: 0.8;
+}
+
+.journey-track[data-progress="3"]::after {
+    height: calc(var(--spacing-xl) * 3);
+    opacity: 0.8;
+}
+
+.journey-track[data-progress="4"]::after {
+    height: calc(var(--spacing-xl) * 4);
+    opacity: 0.8;
+}
+
+.journey-track[data-progress="5"]::after {
+    height: calc(var(--spacing-xl) * 5);
+    opacity: 0.8;
+}
+
+.journey-track[data-progress="6"]::after {
+    height: calc(var(--spacing-xl) * 6);
+    opacity: 0.8;
+}
+
+.journey-track[data-progress="7"]::after {
+    height: calc(var(--spacing-xl) * 7);
+    opacity: 0.8;
+}
+
+/* 导航点容器 */
+.journey-point {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* 导航点内部圆点 */
+.journey-point::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    transition: all var(--transition-fast);
+    opacity: 0.5;
+}
+
+/* 导航点外圈 */
+.journey-point::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    transition: all var(--transition-fast);
+    opacity: 0.2;
+}
+
+/* 导航文字 */
+.journey-point-text {
+    position: absolute;
+    right: calc(100% + var(--spacing-xl));
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    background: var(--bg-light);
+    color: var(--text-light);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition-medium);
+    border: 1px solid transparent;
+    backdrop-filter: blur(4px);
+}
+
+/* 连接线 */
+.journey-line {
+    position: absolute;
+    width: 2px;
+    height: var(--spacing-xl);
+    background: var(--accent-color);
+    opacity: 0.2;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    transition: all var(--transition-medium);
+}
+
+/* 已访问状态 */
+.journey-point.visited::before {
+    opacity: 0.8;
+    transform: scale(1.2);
+}
+
+.journey-point.visited::after {
+    opacity: 0.4;
+    border-color: var(--accent-color);
+}
+
+/* 悬浮和激活状态 */
+.journey-point:hover::before,
+.journey-point.active::before {
+    transform: scale(1.5);
+    opacity: 1;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.journey-point:hover::after,
+.journey-point.active::after {
+    transform: scale(1.2);
+    opacity: 0.5;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+.journey-point:hover .journey-point-text,
+.journey-point.active .journey-point-text {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 20px var(--glow-color);
+}
+
+/* 动画效果 */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.8);
+        opacity: 0.8;
+    }
+}
+
+.journey-point.active::before {
+    animation: pulse 2s infinite;
+}
+
+/* 最后一个点不需要连接线和底部间距 */
+.journey-point:last-child {
+    margin-bottom: 0;
+}
+
+.journey-point:last-child .journey-line {
+    display: none;
+}

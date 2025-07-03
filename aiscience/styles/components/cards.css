@@ -1,0 +1,2327 @@
+.content-section {
+    min-height: 100vh;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.interactive-card {
+    max-width: var(--max-width);
+    width: 90%;
+    margin: 0 auto;
+    background: var(--bg-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all var(--transition-slow);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.interactive-card.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card-content {
+    padding: var(--spacing-xl);
+    position: relative;
+}
+
+.card-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--gradient-accent);
+    opacity: 0.3;
+}
+
+.card-content h2 {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.card-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--accent-color);
+    box-shadow: 0 0 10px var(--glow-color);
+}
+
+.card-content p {
+    color: var(--text-color);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+/* 添加发光边框效果 */
+.interactive-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: var(--gradient-accent);
+    border-radius: var(--border-radius);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+}
+
+.interactive-card:hover::before {
+    opacity: 0.1;
+}
+
+/* 添加悬浮效果 */
+.interactive-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px var(--shadow-color);
+}
+
+/* 第一部分特殊样式 */
+#section1 .interactive-card {
+    background: rgba(8, 20, 40, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+}
+
+/* AI大脑背景 */
+.ai-brain-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.neural-network {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(100, 255, 218, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 180, 216, 0.1) 0%, transparent 50%);
+    animation: networkPulse 8s ease-in-out infinite;
+}
+
+.data-stream {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    background-image:
+        linear-gradient(0deg, transparent 24%,
+            rgba(100, 255, 218, 0.5) 25%,
+            rgba(100, 255, 218, 0.5) 26%,
+            transparent 27%, transparent 74%,
+            rgba(100, 255, 218, 0.5) 75%,
+            rgba(100, 255, 218, 0.5) 76%, transparent 77%),
+        linear-gradient(90deg, transparent 24%,
+            rgba(100, 255, 218, 0.5) 25%,
+            rgba(100, 255, 218, 0.5) 26%,
+            transparent 27%, transparent 74%,
+            rgba(100, 255, 218, 0.5) 75%,
+            rgba(100, 255, 218, 0.5) 76%, transparent 77%);
+    background-size: 50px 50px;
+    animation: dataFlow 20s linear infinite;
+}
+
+/* AI助手样式 */
+.ai-assistant {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.ai-avatar {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-ring {
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    animation: ringRotate 4s linear infinite;
+}
+
+.avatar-core {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--bg-color);
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: corePulse 2s ease-in-out infinite;
+}
+
+.ai-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    animation: statusBlink 1s ease-in-out infinite;
+}
+
+/* 标题样式 */
+.glitch-text {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--text-lighter);
+    position: relative;
+    text-shadow:
+        2px 2px var(--accent-color),
+        -2px -2px #00b4d8;
+    animation: glitchText 3s infinite;
+}
+
+/* 打字机容器样式 */
+.typing-container {
+    background: rgba(13, 25, 48, 0.9);
+    border-radius: 15px;
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    overflow: hidden;
+}
+
+.typing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(16, 30, 54, 0.95);
+    border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.typing-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.control-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    opacity: 0.5;
+}
+
+/* 打字机文本样式 */
+.typing-text {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.typing-text.active {
+    opacity: 1;
+}
+
+/* 打字机状态样式 */
+.typing-status {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+    min-height: 20px;
+    /* 防止状态切换时的抖动 */
+}
+
+.typing-status.typing {
+    animation: statusFade 2s ease-in-out infinite;
+}
+
+.typing-status.typing::after {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: currentColor;
+    border-radius: 50%;
+    margin-left: 4px;
+    animation: cursorBlink 1s step-end infinite;
+    vertical-align: middle;
+}
+
+.typing-status.complete {
+    color: #4CAF50;
+    animation: none;
+}
+
+.message-container {
+    padding: 2rem;
+    background: linear-gradient(135deg,
+            rgba(13, 25, 48, 0.8),
+            rgba(16, 30, 54, 0.6));
+}
+
+.typing-footer {
+    padding: 1rem;
+    border-top: 1px solid rgba(100, 255, 218, 0.2);
+    background: rgba(16, 30, 54, 0.95);
+}
+
+.ai-metrics {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.metric .label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+.metric .value {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-family: monospace;
+}
+
+/* 动画关键帧 */
+@keyframes networkPulse {
+
+    0%,
+    100% {
+        opacity: 0.1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.2;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes dataFlow {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 50px 50px;
+    }
+}
+
+@keyframes ringRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes corePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px rgba(100, 255, 218, 0.5);
+    }
+}
+
+@keyframes statusBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes glitchText {
+
+    0%,
+    100% {
+        text-shadow:
+            2px 2px var(--accent-color),
+            -2px -2px #00b4d8;
+    }
+
+    50% {
+        text-shadow:
+            -2px 2px #00b4d8,
+            2px -2px var(--accent-color);
+    }
+}
+
+@keyframes statusFade {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes cursorBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* 交互提示 */
+.interaction-hint {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.interaction-hint i {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* 滚动引导样式 */
+.scroll-guide {
+    position: absolute;
+    bottom: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 3s forwards;
+}
+
+/* 引导文字容器 */
+.guide-text {
+    position: relative;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.8rem 2rem;
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    border-radius: 20px;
+    background: rgba(13, 25, 48, 0.8);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+/* 文字扫描线效果 */
+.guide-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(100, 255, 218, 0.2),
+            transparent);
+    animation: scanLine 2s ease-in-out infinite;
+}
+
+/* 边框发光效果 */
+.guide-text::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(90deg, var(--accent-color), #00b4d8);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+    animation: borderGlow 2s linear infinite;
+}
+
+/* 箭头容器 */
+.scroll-arrows {
+    position: relative;
+    width: 40px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* 箭头样式 */
+.scroll-arrow {
+    width: 10px;
+    height: 10px;
+    border: none;
+    background: var(--accent-color);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    animation: arrowPulse 1.5s infinite;
+    filter: drop-shadow(0 0 5px var(--accent-color));
+}
+
+.scroll-arrow:nth-child(2) {
+    animation-delay: 0.2s;
+    opacity: 0.6;
+}
+
+.scroll-arrow:nth-child(3) {
+    animation-delay: 0.4s;
+    opacity: 0.3;
+}
+
+/* 动画关键帧 */
+@keyframes scanLine {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 200%;
+        opacity: 0;
+    }
+}
+
+@keyframes borderGlow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes arrowPulse {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        filter: drop-shadow(0 0 5px var(--accent-color));
+    }
+
+    50% {
+        transform: translateY(10px) scale(1.2);
+        filter: drop-shadow(0 0 10px var(--accent-color));
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* 当打字完成后显示滚动提示 */
+.typing-status.complete~.scroll-guide {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* 第二部分：AI工作原理 */
+.ai-process-flow {
+    position: relative;
+    min-height: 600px;
+    margin: 4rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    perspective: 1000px;
+}
+
+/* 处理阶段通用样式 */
+.process-stage {
+    flex: 1;
+    height: 400px;
+    background: rgba(13, 25, 48, 0.7);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    backdrop-filter: blur(10px);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+.process-stage:hover {
+    transform: translateZ(20px);
+}
+
+/* 输入层样式 */
+.data-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100%;
+    padding: 1rem;
+}
+
+.data-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    padding: 1rem;
+    background: rgba(8, 15, 30, 0.6);
+    border-radius: 12px;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.data-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px var(--glow-color));
+}
+
+.data-stream {
+    position: absolute;
+    right: -100%;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--accent-color),
+            transparent);
+    animation: dataStreamFlow 3s linear infinite;
+    transform-origin: left center;
+}
+
+/* 神经网络处理层样式 */
+.network-stage {
+    transform: translateZ(30px);
+    background: linear-gradient(135deg,
+            rgba(13, 25, 48, 0.9),
+            rgba(16, 30, 54, 0.8));
+}
+
+.network-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.processing-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center,
+            transparent,
+            rgba(8, 15, 30, 0.8));
+}
+
+.processing-metrics {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(8, 15, 30, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.metric-value {
+    color: var(--accent-color);
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+/* 输出层样式 */
+.result-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(8, 15, 30, 0.6);
+    border-radius: 12px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    transform: translateX(100%);
+    opacity: 0;
+    animation: resultSlideIn 0.5s ease forwards;
+}
+
+.result-icon {
+    width: 30px;
+    height: 30px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--bg-color);
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+.result-text {
+    color: var(--text-lighter);
+    font-size: 1rem;
+}
+
+.accuracy {
+    margin-left: auto;
+    color: var(--accent-color);
+    font-family: monospace;
+}
+
+/* 阶段标签 */
+.stage-label {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1.5rem;
+    background: rgba(100, 255, 218, 0.1);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    backdrop-filter: blur(4px);
+}
+
+/* 动画效果 */
+@keyframes dataStreamFlow {
+    0% {
+        transform: translateX(-100%) scaleX(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateX(0) scaleX(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(100%) scaleX(0);
+        opacity: 0;
+    }
+}
+
+@keyframes resultSlideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 为每个结果项添加延迟 */
+.result-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.result-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.result-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* 描述文本样式 */
+.process-description {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(8, 15, 30, 0.6);
+    border-radius: 15px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* AI学习过程容器 */
+.ai-learning-process {
+    position: relative;
+    padding: 2rem;
+    margin: 4rem 0;
+    padding-bottom: 8rem;
+}
+
+/* 垂直时间轴 */
+.ai-learning-process::before {
+    content: '';
+    position: absolute;
+    left: 3rem;
+    top: 0;
+    bottom: -12rem;
+    width: 2px;
+    background: linear-gradient(to bottom,
+            rgba(100, 255, 218, 0.1),
+            var(--accent-color) 10%,
+            var(--accent-color) 90%,
+            rgba(100, 255, 218, 0.1));
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+/* 处理步骤样式 */
+.process-step {
+    position: relative;
+    margin-bottom: 10rem;
+    padding-left: 8rem;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease;
+}
+
+.process-step.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 最后一个步骤的特殊处理 */
+.process-step:last-child {
+    margin-bottom: 6rem;
+}
+
+/* 步骤头部样式 */
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 5rem;
+}
+
+.step-number {
+    position: absolute;
+    left: 0;
+    width: 4rem;
+    height: 4rem;
+    background: var(--bg-light);
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    box-shadow: 0 0 20px var(--glow-color);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.process-step.active .step-number {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px var(--glow-color);
+}
+
+.step-header h3 {
+    font-size: 2rem;
+    color: var(--text-lighter);
+    margin: 0;
+    position: relative;
+    padding-bottom: 0.5rem;
+    z-index: 1;
+    width: 100%;
+}
+
+.step-header h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.8s ease;
+}
+
+.process-step.active .step-header h3::after {
+    width: 100%;
+}
+
+/* 步骤内容区域 */
+.step-content {
+    background: rgba(13, 25, 48, 0.7);
+    border-radius: 20px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    padding: 1.5rem 1.5rem .5rem 1.5rem;
+    backdrop-filter: blur(10px);
+    margin-bottom: 2rem;
+}
+
+.process-step.active .step-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* 可视化区域 */
+.step-visual {
+    min-height: 400px;
+    background: rgba(8, 15, 30, 0.6);
+    border-radius: 15px;
+    margin: 2rem 0;
+    position: relative;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    padding: .5rem;
+    display: flex;
+    align-items: stretch;
+}
+
+/* 数据收集容器 */
+.data-collection {
+    flex: 1;
+    display: flex;
+    gap: 3rem;
+    align-items: stretch;
+}
+
+/* 数据输入区域 */
+.data-inputs {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.5rem;
+    padding: 1rem 0;
+}
+
+/* 数据类型项 */
+.data-type {
+    flex: 1;
+    background: rgba(13, 25, 48, 0.8);
+    border-radius: 12px;
+    padding: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* 数据处理流程 */
+.data-processing {
+    width: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.process-flow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.flow-step {
+    background: rgba(13, 25, 48, 0.8);
+    border-radius: 10px;
+    padding: 1rem;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+/* 处理结果区域 */
+.processed-result {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(13, 25, 48, 0.8);
+    border-radius: 12px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    padding: 1.5rem;
+}
+
+.result-visualization {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.result-header {
+    color: var(--text-lighter);
+    font-size: 1.2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.data-conversion {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.conversion-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.original-data,
+.converted-data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.data-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.pixel-preview {
+    height: 100px;
+    background: repeating-linear-gradient(45deg,
+            rgba(100, 255, 218, 0.1) 0px,
+            rgba(100, 255, 218, 0.1) 10px,
+            transparent 10px,
+            transparent 20px);
+    border-radius: 8px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.pixel-preview::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(100, 255, 218, 0.2),
+            transparent);
+    animation: scanEffect 2s linear infinite;
+}
+
+.arrow {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 5px var(--accent-color));
+}
+
+.number-matrix {
+    background: rgba(8, 15, 30, 0.6);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    font-family: monospace;
+    color: var(--accent-color);
+}
+
+.matrix-row {
+    text-align: center;
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.matrix-row:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.matrix-row:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.matrix-row:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.explanation {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    padding: 1rem;
+    background: rgba(8, 15, 30, 0.6);
+    border-radius: 8px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 图标和标签 */
+.type-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    width: 40px;
+    text-align: center;
+}
+
+.type-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    flex-shrink: 0;
+    width: 70px;
+    text-align: right;
+}
+
+/* 动画区域 */
+.data-animation {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+}
+
+/* 数据源样式 */
+.data-sources {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    height: 100%;
+    align-items: center;
+}
+
+.data-source {
+    text-align: center;
+    position: relative;
+    padding: 1.5rem;
+    background: rgba(13, 25, 48, 0.8);
+    border-radius: 15px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    transition: all 0.3s ease;
+}
+
+.data-source:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(100, 255, 218, 0.1);
+}
+
+.source-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px var(--glow-color));
+    transition: transform 0.3s ease;
+}
+
+.data-source:hover .source-icon {
+    transform: scale(1.1);
+}
+
+.source-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.data-source:hover .source-label {
+    opacity: 1;
+}
+
+/* 数据流动效果 */
+.data-flow {
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    width: 100%;
+    height: 2px;
+    overflow: hidden;
+}
+
+.data-stream {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--accent-color),
+            transparent);
+    animation: streamFlow 2s linear infinite;
+}
+
+@keyframes streamFlow {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* 训练指标样式优化 */
+.training-metrics {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(8, 15, 30, 0.9);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.metric {
+    margin-bottom: 1rem;
+}
+
+.metric-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 6px;
+    background: rgba(100, 255, 218, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), #00b4d8);
+    border-radius: 3px;
+    transition: width 1.5s ease;
+    position: relative;
+}
+
+.progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3));
+    animation: progressGlow 1s ease-in-out infinite;
+}
+
+@keyframes progressGlow {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* 像素网格动画 */
+.pixel-grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2px;
+}
+
+.pixel-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(100, 255, 218, 0.2),
+            transparent);
+    animation: scanEffect 2s linear infinite;
+}
+
+/* 文本流动动画 */
+.text-flow {
+    position: relative;
+    height: 100%;
+}
+
+.text-flow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent-color);
+    animation: textFlow 2s linear infinite;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* 波形动画 */
+.wave-form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.wave-form::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg,
+            var(--accent-color) 0,
+            var(--accent-color) 2px,
+            transparent 2px,
+            transparent 10px);
+    opacity: 0.3;
+    animation: waveMove 3s linear infinite;
+}
+
+/* 数据处理流程 - 中间部分 */
+.data-processing {
+    width: 200px;
+    /* 固定宽度 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.process-flow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 2rem 0;
+}
+
+.flow-step {
+    background: rgba(13, 25, 48, 0.8);
+    border-radius: 10px;
+    padding: 1rem;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    width: 100%;
+}
+
+.step-name {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.flow-animation {
+    height: 2px;
+    background: var(--accent-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.flow-animation::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.8),
+            transparent);
+    animation: flowProcess 2s ease-in-out infinite;
+}
+
+/* 处理结果 - 右侧部分 */
+.processed-result {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(13, 25, 48, 0.8);
+    border-radius: 12px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    overflow: hidden;
+    /* 限制内容溢出 */
+}
+
+.matrix-visualization {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+/* 修改栅格样式，限制其范围 */
+.matrix-grid {
+    position: absolute;
+    inset: 1rem;
+    /* 给定边距 */
+    background-image:
+        linear-gradient(rgba(100, 255, 218, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 255, 218, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: matrixScroll 20s linear infinite;
+    opacity: 0.5;
+    /* 降低不透明度 */
+    pointer-events: none;
+    /* 防止干扰交互 */
+}
+
+/* 数据流动效果 */
+.data-stream {
+    position: absolute;
+    inset: 1rem;
+    background: linear-gradient(0deg,
+            transparent 0%,
+            rgba(100, 255, 218, 0.05) 45%,
+            rgba(100, 255, 218, 0.1) 50%,
+            rgba(100, 255, 218, 0.05) 55%,
+            transparent 100%);
+    animation: streamFlow 2s linear infinite;
+    pointer-events: none;
+}
+
+/* 动画关键帧 */
+@keyframes scanEffect {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes textFlow {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes waveMove {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-20px);
+    }
+}
+
+@keyframes flowProcess {
+    0% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+@keyframes matrixScroll {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes streamFlow {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* 训练可视化容器 */
+.training-visualization {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    height: 100%;
+    padding: 2rem;
+}
+
+/* 神经网络展示区域 */
+.network-display {
+    background: rgba(13, 25, 48, 0.8);
+    border-radius: 15px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.network-info {
+    text-align: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.network-info h4 {
+    color: var(--text-lighter);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.network-desc {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 神经网络层级 */
+.network-layers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+}
+
+.layer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.layer-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    background: rgba(100, 255, 218, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.connection-arrows {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 5px var(--accent-color));
+    animation: arrowPulse 2s infinite;
+}
+
+/* 神经元样式 */
+.neurons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.neuron {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    background: rgba(100, 255, 218, 0.1);
+    transition: all 0.3s ease;
+}
+
+.neuron.active {
+    background: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color);
+    animation: neuronPulse 2s infinite;
+}
+
+/* 训练过程展示 */
+.training-process {
+    background: rgba(13, 25, 48, 0.8);
+    border-radius: 15px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.process-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.process-header h4 {
+    color: var(--text-lighter);
+    font-size: 1.1rem;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    animation: statusPulse 1s infinite;
+}
+
+.status-text {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* 学习步骤 */
+.learning-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(8, 15, 30, 0.6);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    transition: all 0.3s ease;
+}
+
+.step-item.active {
+    background: rgba(100, 255, 218, 0.1);
+    border-color: rgba(100, 255, 218, 0.3);
+}
+
+.step-icon {
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 5px var(--glow-color));
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-title {
+    color: var(--text-lighter);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.step-progress {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.accuracy {
+    color: var(--accent-color);
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* 动画效果 */
+@keyframes arrowPulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes neuronPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px var(--accent-color);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 25px var(--accent-color);
+    }
+}
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* 应用可视化容器 */
+.application-visualization {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 3rem;
+    height: 100%;
+    padding: 2rem;
+    align-items: center;
+}
+
+/* 通用区块样式 */
+.input-section,
+.output-section {
+    background: rgba(13, 25, 48, 0.8);
+    border-radius: 12px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.section-header {
+    color: var(--text-lighter);
+    font-size: 1.1rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+/* 输入预览区域 */
+.input-preview {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(8, 15, 30, 0.6);
+    border-radius: 10px;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.preview-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: previewPulse 2s infinite;
+}
+
+.preview-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* 处理过程动画 */
+.processing-section {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.process-animation {
+    text-align: center;
+}
+
+.process-line {
+    width: 3px;
+    height: 200px;
+    background: var(--accent-color);
+    margin: 0 auto 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.process-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom,
+            transparent,
+            var(--accent-color),
+            transparent);
+    animation: processFlow 2s infinite;
+}
+
+.process-status {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    animation: textPulse 2s infinite;
+}
+
+/* 结果展示区域 */
+.result-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(8, 15, 30, 0.6);
+    border-radius: 8px;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.result-label {
+    color: var(--text-lighter);
+    font-size: 1rem;
+    min-width: 60px;
+}
+
+.confidence-bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(100, 255, 218, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.confidence-fill {
+    height: 100%;
+    background: linear-gradient(90deg,
+            var(--accent-color),
+            #00b4d8);
+    border-radius: 4px;
+    transform-origin: left;
+    animation: fillBar 1.5s ease-out forwards;
+}
+
+.confidence-value {
+    color: var(--accent-color);
+    font-family: monospace;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+}
+
+/* 动画效果 */
+@keyframes previewPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes processFlow {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(200%);
+    }
+}
+
+@keyframes textPulse {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes fillBar {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* AI应用展示容器 */
+.ai-application {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    height: 100%;
+    padding: 1.25rem;
+}
+
+/* 应用场景展示区域 */
+.application-scenario {
+    background: rgba(13, 25, 48, 0.8);
+    border-radius: 15px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    padding: 2rem;
+}
+
+.scenario-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.title-icon {
+    font-size: 2rem;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+.scenario-title h4 {
+    color: var(--text-lighter);
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* 应用示例列表 */
+.scenario-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.example-item {
+    display: flex;
+    gap: 1.25rem;
+    padding: .5rem;
+    background: rgba(8, 15, 30, 0.6);
+    border-radius: 12px;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    transition: all 0.3s ease;
+}
+
+.example-item:hover {
+    transform: translateX(10px);
+    border-color: rgba(100, 255, 218, 0.3);
+}
+
+.example-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px var(--glow-color));
+}
+
+.example-content {
+    flex: 1;
+}
+
+.example-title {
+    color: var(--text-lighter);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.example-desc {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* 演示动画区域 */
+.recognition-demo,
+.voice-demo,
+.photo-demo {
+    background: rgba(13, 25, 48, 0.6);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* 面部识别演示 */
+.face-scan {
+    height: 40px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(100, 255, 218, 0.2),
+            transparent);
+    border-radius: 4px;
+    animation: scanningEffect 2s infinite;
+}
+
+.scan-result {
+    color: var(--accent-color);
+    font-family: monospace;
+    font-size: 0.9rem;
+    text-align: right;
+    margin-top: 0.5rem;
+}
+
+/* 语音助手演示 */
+.voice-wave {
+    height: 40px;
+    background: repeating-linear-gradient(90deg,
+            var(--accent-color) 0px,
+            var(--accent-color) 2px,
+            transparent 2px,
+            transparent 6px);
+    opacity: 0.3;
+    animation: waveAnimation 1s ease-in-out infinite;
+}
+
+.voice-text {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* 照片处理演示 */
+.photo-demo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.photo-before,
+.photo-after {
+    flex: 1;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(8, 15, 30, 0.6);
+    border-radius: 4px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.process-arrow {
+    color: var(--accent-color);
+    animation: arrowPulse 1.5s infinite;
+}
+
+/* AI工作原理解释 */
+.ai-explanation {
+    background: rgba(13, 25, 48, 0.8);
+    border-radius: 15px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    padding: 2rem;
+}
+
+.explanation-header {
+    color: var(--text-lighter);
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.work-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.work-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(8, 15, 30, 0.6);
+    border-radius: 10px;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.step-num {
+    width: 24px;
+    height: 24px;
+    background: rgba(100, 255, 218, 0.1);
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+.step-detail {
+    flex: 1;
+}
+
+.step-detail strong {
+    color: var(--text-lighter);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.step-detail p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* 动画效果 */
+@keyframes floatIcon {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes scanningEffect {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes waveAnimation {
+
+    0%,
+    100% {
+        transform: scaleY(0.5);
+    }
+
+    50% {
+        transform: scaleY(1.2);
+    }
+}
+
+@keyframes arrowPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* 导航样式 */
+.journey-map {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.journey-track {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    --connection-height: 0%;
+    /* 默认连接线高度 */
+}
+
+/* 基础连接线 */
+.journey-track::before {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    height: calc(100% - 12px);
+    width: 2px;
+    background: rgba(100, 255, 218, 0.1);
+}
+
+/* 激活的连接线 */
+.journey-track::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    width: 2px;
+    height: var(--connection-height);
+    background: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color);
+    transition: height 0.5s ease;
+}
+
+.journey-point {
+    position: relative;
+    cursor: pointer;
+}
+
+.point-inner {
+    width: 12px;
+    height: 12px;
+    background: rgba(100, 255, 218, 0.2);
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.point-label {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.journey-point:hover .point-inner,
+.journey-point.active .point-inner {
+    background: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.journey-point:hover .point-label,
+.journey-point.active .point-label {
+    opacity: 1;
+    transform: translate(-10px, -50%);
+}

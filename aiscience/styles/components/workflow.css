@@ -1,0 +1,231 @@
+/* AI工作流程容器 */
+.ai-workflow {
+    position: relative;
+    padding: 2rem;
+    background: rgba(8, 15, 30, 0.8);
+    border-radius: 20px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    overflow: hidden;
+}
+
+/* 工作流程可视化 */
+.workflow-visualization {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 400px;
+    padding: 2rem;
+    position: relative;
+}
+
+/* 工作阶段样式 */
+.workflow-stage {
+    flex: 1;
+    max-width: 300px;
+    background: rgba(13, 25, 48, 0.7);
+    border-radius: 15px;
+    padding: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* 阶段连接线 */
+.workflow-connection {
+    flex: 0.5;
+    height: 3px;
+    background: linear-gradient(90deg,
+            rgba(100, 255, 218, 0.1),
+            rgba(100, 255, 218, 0.3),
+            rgba(100, 255, 218, 0.1));
+    position: relative;
+    overflow: hidden;
+}
+
+.data-flow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--accent-color),
+            transparent);
+    animation: dataFlowing 2s linear infinite;
+}
+
+/* 输入阶段特效 */
+.input-stage .stage-visual {
+    position: relative;
+    height: 200px;
+    background: rgba(8, 15, 30, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.input-icons {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.input-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(100, 255, 218, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    position: relative;
+    animation: iconPulse 2s infinite;
+}
+
+.input-icon::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    opacity: 0;
+    animation: iconRing 2s infinite;
+}
+
+/* 处理阶段特效 */
+.process-stage .stage-visual {
+    position: relative;
+    height: 200px;
+    background: rgba(8, 15, 30, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.processing-indicators {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+/* 输出阶段特效 */
+.output-stage .stage-visual {
+    position: relative;
+    height: 200px;
+    background: rgba(8, 15, 30, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.output-results {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.result-item {
+    background: rgba(100, 255, 218, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: var(--accent-color);
+    font-family: monospace;
+    font-size: 0.9rem;
+    animation: resultFade 0.5s ease-out forwards;
+}
+
+/* 状态指示器 */
+.workflow-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(8, 15, 30, 0.6);
+    border-radius: 10px;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.status-light {
+    width: 12px;
+    height: 12px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    animation: statusPulse 2s infinite;
+}
+
+/* 动画关键帧 */
+@keyframes dataFlowing {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+        filter: brightness(1.2);
+    }
+}
+
+@keyframes iconRing {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 10px var(--accent-color);
+    }
+
+    50% {
+        opacity: 0.5;
+        box-shadow: 0 0 20px var(--accent-color);
+    }
+}
+
+@keyframes resultFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

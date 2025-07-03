@@ -1,0 +1,41 @@
+/* 导入基础样式 */
+@import 'base/reset.css';
+@import 'base/variables.css';
+@import 'base/typography.css';
+
+/* 导入组件样式 */
+@import 'components/hero.css';
+@import 'components/navigation.css';
+@import 'components/cards.css';
+@import 'components/animations.css';
+@import 'components/footer.css';
+
+/* 导入交互组件样式 */
+@import 'components/voice-assistant.css';
+@import 'components/logistics.css';
+@import 'components/self-driving.css';
+@import 'components/challenges.css';
+@import 'components/future-vision.css';
+
+/* 导入各部分样式 */
+@import 'sections/section1.css';
+@import 'sections/section2.css';
+/* ... */
+
+/* 添加响应式样式 */
+@media (max-width: 768px) {
+    .journey-map {
+        display: none;
+    }
+
+    .card-content {
+        padding: var(--spacing-lg);
+    }
+
+    .card-content h2 {
+        font-size: 2rem;
+    }
+}
+
+/* 导入响应式样式 */
+@import 'base/responsive.css';

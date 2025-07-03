@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI探索之旅</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- 添加Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- 首页动画区域 -->
+    <section class="hero" id="hero">
+        <div class="ai-particles"></div>
+        <div class="light-beam"></div>
+        <div class="title-container">
+            <h1 class="main-title">AI探索之旅</h1>
+        </div>
+        <div class="scroll-indicator">
+            <span>向下滚动开始探索</span>
+            <div class="scroll-arrows">
+                <div class="scroll-arrow"></div>
+                <div class="scroll-arrow"></div>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 交互式导航 -->
+    <div class="journey-map">
+        <div class="journey-track">
+            <div class="journey-point" data-section="1">
+                <div class="point-inner"></div>
+                <div class="point-label">AI启程</div>
+            </div>
+            <div class="journey-point" data-section="2">
+                <div class="point-inner"></div>
+                <div class="point-label">AI原理</div>
+            </div>
+            <div class="journey-point" data-section="3">
+                <div class="point-inner"></div>
+                <div class="point-label">AI挑战</div>
+            </div>
+            <div class="journey-point" data-section="4">
+                <div class="point-inner"></div>
+                <div class="point-label">未来展望</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 其他章节将类似实现 -->
+
+    <!-- 内容结构 -->
+    <div id="app">
+        <!-- 第一部分：开场引入 -->
+        <section class="content-section" id="section1">
+            <div class="interactive-card">
+                <div class="ai-brain-bg">
+                    <div class="neural-network"></div>
+                    <div class="data-stream"></div>
+                </div>
+                <div class="card-content">
+                    <div class="content-left">
+                        <div class="ai-assistant">
+                            <div class="ai-avatar">
+                                <div class="avatar-ring"></div>
+                                <div class="avatar-core">AI</div>
+                            </div>
+                            <div class="ai-status">
+                                <div class="status-dot"></div>
+                                <span>AI助手已激活</span>
+                            </div>
+                        </div>
+                        <h2 class="glitch-text" data-text="嘿，想了解AI吗？">嘿，想了解AI吗？</h2>
+                        <div class="typing-container">
+                            <div class="typing-header">
+                                <div class="typing-controls">
+                                    <span class="control-dot"></span>
+                                    <span class="control-dot"></span>
+                                    <span class="control-dot"></span>
+                                </div>
+                                <div class="typing-status">AI正在输入...</div>
+                            </div>
+                            <div class="message-container">
+                                <p class="typing-text">
+                                    如今人工智能（AI）就像个无所不在的隐形伙伴，渗透到了我们生活的方方面面。那它到底是啥？又怎么在悄悄改变我们的生活呢？今天就带大家一探究竟！
+                                </p>
+                            </div>
+                            <div class="typing-footer">
+                                <div class="ai-metrics">
+                                    <div class="metric">
+                                        <span class="label">运算速度</span>
+                                        <span class="value">1.2T/s</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="label">响应时间</span>
+                                        <span class="value">0.3ms</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scroll-guide">
+                        <span class="guide-text">向下滚动继续探索</span>
+                        <div class="scroll-arrows">
+                            <div class="scroll-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二部分：AI原理 -->
+        <section class="content-section" id="section2">
+            <div class="interactive-card">
+                <div class="card-content">
+                    <h2 class="tech-title">AI是如何工作的？</h2>
+
+                    <div class="ai-learning-process">
+                        <!-- 步骤1：数据收集 -->
+                        <div class="process-step" data-step="1">
+                            <div class="step-content">
+                                <div class="step-header">
+                                    <div class="step-number">01</div>
+                                    <h3>数据收集与预处理</h3>
+                                </div>
+                                <div class="step-visual">
+                                    <div class="data-collection">
+                                        <!-- 数据输入展示 -->
+                                        <div class="data-inputs">
+                                            <div class="data-type" data-type="image">
+                                                <div class="type-icon"><i class="fas fa-camera"></i></div>
+                                                <div class="data-animation">
+                                                    <div class="pixel-grid"></div>
+                                                </div>
+                                                <div class="type-label">图像数据</div>
+                                            </div>
+                                            <div class="data-type" data-type="text">
+                                                <div class="type-icon"><i class="fas fa-file-alt"></i></div>
+                                                <div class="data-animation">
+                                                    <div class="text-flow"></div>
+                                                </div>
+                                                <div class="type-label">文本数据</div>
+                                            </div>
+                                            <div class="data-type" data-type="audio">
+                                                <div class="type-icon"><i class="fas fa-microphone"></i></div>
+                                                <div class="data-animation">
+                                                    <div class="wave-form"></div>
+                                                </div>
+                                                <div class="type-label">语音数据</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 数据处理流程 -->
+                                        <div class="data-processing">
+                                            <div class="process-flow">
+                                                <div class="flow-step" data-step="clean">
+                                                    <span class="step-name">数据清洗</span>
+                                                    <div class="flow-animation"></div>
+                                                </div>
+                                                <div class="flow-step" data-step="normalize">
+                                                    <span class="step-name">数据标准化</span>
+                                                    <div class="flow-animation"></div>
+                                                </div>
+                                                <div class="flow-step" data-step="transform">
+                                                    <span class="step-name">数据转换</span>
+                                                    <div class="flow-animation"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 处理结果 -->
+                                        <div class="processed-result">
+                                            <div class="result-visualization">
+                                                <div class="result-header">数据处理结果</div>
+                                                <div class="data-conversion">
+                                                    <div class="conversion-item">
+                                                        <div class="original-data">
+                                                            <span class="data-label">原数据</span>
+                                                            <div class="pixel-preview"></div>
+                                                        </div>
+                                                        <div class="arrow">→</div>
+                                                        <div class="converted-data">
+                                                            <span class="data-label">数字矩阵</span>
+                                                            <div class="number-matrix">
+                                                                <div class="matrix-row">0.92 0.14 0.44</div>
+                                                                <div class="matrix-row">0.31 0.86 0.27</div>
+                                                                <div class="matrix-row">0.65 0.23 0.77</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="explanation">
+                                                        AI通过将各种数据转换成数字矩阵来进行处理
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="step-description typing-text">
+                                    就像人类通过眼睛、耳朵等感官接收信息，AI首先需要收集和整理各种类型的数据。
+                                    这些数据经过清洗和标准化，最终转换成AI可以理解的数字形式。
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 步骤2：模型训练 -->
+                        <div class="process-step" data-step="2">
+                            <div class="step-content">
+                                <div class="step-header">
+                                    <div class="step-number">02</div>
+                                    <h3>深度学习训练</h3>
+                                </div>
+                                <div class="step-visual">
+                                    <div class="training-visualization">
+                                        <!-- 简化的神经网络展示 -->
+                                        <div class="network-display">
+                                            <div class="network-info">
+                                                <h4>模拟人脑的"神经网络"</h4>
+                                                <p class="network-desc">就像人脑中的神经元相互连接传递信息，AI也通过类似的网络结构来学习</p>
+                                            </div>
+                                            <div class="network-layers">
+                                                <div class="layer input-layer">
+                                                    <div class="layer-label">输入数据</div>
+                                                    <div class="neurons">
+                                                        <div class="neuron"></div>
+                                                        <div class="neuron"></div>
+                                                        <div class="neuron"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="connection-arrows">→</div>
+                                                <div class="layer hidden-layer">
+                                                    <div class="layer-label">学习处理</div>
+                                                    <div class="neurons">
+                                                        <div class="neuron active"></div>
+                                                        <div class="neuron"></div>
+                                                        <div class="neuron active"></div>
+                                                        <div class="neuron"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="connection-arrows">→</div>
+                                                <div class="layer output-layer">
+                                                    <div class="layer-label">输出结果</div>
+                                                    <div class="neurons">
+                                                        <div class="neuron"></div>
+                                                        <div class="neuron active"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 训练过程展示 -->
+                                        <div class="training-process">
+                                            <div class="process-header">
+                                                <h4>训练进行中</h4>
+                                                <div class="status-indicator">
+                                                    <span class="status-dot"></span>
+                                                    <span class="status-text">正在学习...</span>
+                                                </div>
+                                            </div>
+                                            <div class="learning-steps">
+                                                <div class="step-item active">
+                                                    <div class="step-icon"><i class="fas fa-download"></i></div>
+                                                    <div class="step-content">
+                                                        <div class="step-title">接收数据</div>
+                                                        <div class="step-progress">已处理1000条</div>
+                                                    </div>
+                                                </div>
+                                                <div class="step-item">
+                                                    <div class="step-icon"><i class="fas fa-sync-alt"></i></div>
+                                                    <div class="step-content">
+                                                        <div class="step-title">分析规律</div>
+                                                        <div class="step-progress">
+                                                            <div class="progress-bar">
+                                                                <div class="progress" style="width: 75%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="step-item">
+                                                    <div class="step-icon"><i class="fas fa-chart-line"></i></div>
+                                                    <div class="step-content">
+                                                        <div class="step-title">提升准确度</div>
+                                                        <div class="accuracy">96.5%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="step-description typing-text">
+                                深度学习就像教会电脑思考：通过大量练习来提高准确性。
+                                比如识别猫的图片，AI会先学习"耳朵是三角的"、"有胡须"等特征，
+                                然后把这些特征组合起来，最终学会准确识别猫。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 步骤3：模型应用 -->
+                    <div class="process-step" data-step="3">
+                        <div class="step-content">
+                            <div class="step-header">
+                                <div class="step-number">03</div>
+                                <h3>智能决策输出</h3>
+                            </div>
+                            <div class="step-visual">
+                                <div class="ai-application">
+                                    <!-- 实际应用场景展示 -->
+                                    <div class="application-scenario">
+                                        <div class="scenario-title">
+                                            <div class="title-icon"><i class="fas fa-robot"></i></div>
+                                            <h4>生活中的AI应用</h4>
+                                        </div>
+                                        <div class="scenario-examples">
+                                            <div class="example-item">
+                                                <div class="example-icon"><i class="fas fa-mobile-alt"></i></div>
+                                                <div class="example-content">
+                                                    <div class="example-title">手机解锁</div>
+                                                    <div class="example-desc">扫描面部特征，快速识别身份</div>
+                                                    <div class="recognition-demo">
+                                                        <div class="face-scan"></div>
+                                                        <div class="scan-result">身份匹配：98%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="example-item">
+                                                <div class="example-icon"><i class="fas fa-comment-dots"></i></div>
+                                                <div class="example-content">
+                                                    <div class="example-title">语音助手</div>
+                                                    <div class="example-desc">听懂语音指令并智能回应</div>
+                                                    <div class="voice-demo">
+                                                        <div class="voice-wave"></div>
+                                                        <div class="voice-text">"帮我设个明天早上8点的闹钟"</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="example-item">
+                                                <div class="example-icon"><i class="fas fa-camera-retro"></i></div>
+                                                <div class="example-content">
+                                                    <div class="example-title">相机美颜</div>
+                                                    <div class="example-desc">智能识别面部，自动优化照片</div>
+                                                    <div class="photo-demo">
+                                                        <div class="photo-before">原始照片</div>
+                                                        <div class="process-arrow">→</div>
+                                                        <div class="photo-after">优化效果</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- AI工作原理解释 -->
+                                    <div class="ai-explanation">
+                                        <div class="explanation-header">AI是如何工作的？</div>
+                                        <div class="work-steps">
+                                            <div class="work-step">
+                                                <span class="step-num">1</span>
+                                                <div class="step-detail">
+                                                    <strong>接收信息</strong>
+                                                    <p>就像人眼看到物体，AI接收数据输入</p>
+                                                </div>
+                                            </div>
+                                            <div class="work-step">
+                                                <span class="step-num">2</span>
+                                                <div class="step-detail">
+                                                    <strong>分析处理</strong>
+                                                    <p>像大脑思考一样，AI分析数据特征</p>
+                                                </div>
+                                            </div>
+                                            <div class="work-step">
+                                                <span class="step-num">3</span>
+                                                <div class="step-detail">
+                                                    <strong>做出决策</strong>
+                                                    <p>根据分析结果，给出最终判断</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="step-description typing-text">
+                                训练好的AI就像学成归来的专家，能够在各种场景中帮助我们：解锁手机时快速识别面孔，
+                                听懂我们说的话并智能回应，拍照时自动美化图片...这些都是AI在默默工作的例子。
+                                AI的工作方式其实很像人类：接收信息、思考分析、做出决定，只是它的速度比我们快得多！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第三部分：AI挑战 -->
+        <section class="content-section" id="section6">
+            <div class="interactive-card">
+                <div class="card-content">
+                    <h2>AI发展面临的挑战</h2>
+                    <div class="challenges-grid">
+                        <div class="challenge-card" data-type="privacy">
+                            <h3>数据隐私</h3>
+                            <div class="challenge-icon privacy-icon"></div>
+                            <p>AI收集大量数据，如何保护个人隐私？</p>
+                            <div class="case-study">
+                                <h4>案例分析</h4>
+                                <p>全球首例AI致死命案：14岁男孩与AI聊天机器人"龙妈"交互后的悲剧。</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card" data-type="bias">
+                            <h3>数据偏差</h3>
+                            <div class="challenge-icon bias-icon"></div>
+                            <p>如何确保AI决策的公平性？</p>
+                            <div class="case-study">
+                                <h4>案例分析</h4>
+                                <p>美国警方使用AI面部识别造成无辜人员被错误逮捕。</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card" data-type="security">
+                            <h3>安全风险</h3>
+                            <div class="challenge-icon security-icon"></div>
+                            <p>如何防范AI被恶意利用？</p>
+                            <div class="case-study">
+                                <h4>案例分析</h4>
+                                <p>四川网警查处10起利用AI造谣传谣案件。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第五部分：未来展望 -->
+        <section class="content-section" id="section5">
+            <div class="interactive-card">
+                <div class="card-content">
+                    <h2>AI的未来展望</h2>
+                    <div class="vision-container">
+                        <div class="vision-timeline">
+                            <div class="timeline-node" data-year="现在">
+                                <div class="node-content">
+                                    <h3>当前发展</h3>
+                                    <p>AI已在医疗诊断、智能助手、自动驾驶等领域展现出强大潜力，正在改变我们的生活方式。</p>
+                                    <div class="achievement-list">
+                                        <div class="achievement">
+                                            <span class="achievement-icon"><i class="fas fa-hospital"></i></span>
+                                            <span>医疗诊断准确率提升40%</span>
+                                        </div>
+                                        <div class="achievement">
+                                            <span class="achievement-icon"><i class="fas fa-robot"></i></span>
+                                            <span>智能助手服务10亿用户</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-node" data-year="近期">
+                                <div class="node-content">
+                                    <h3>技术突破</h3>
+                                    <p>更智能的决策系统和多模态AI将出现，实现更自然的人机交互。</p>
+                                    <div class="breakthrough-points">
+                                        <div class="point">
+                                            <span class="point-marker"></span>
+                                            <span>通用人工智能雏形</span>
+                                        </div>
+                                        <div class="point">
+                                            <span class="point-marker"></span>
+                                            <span>类人思维能力</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-node" data-year="未来">
+                                <div class="node-content">
+                                    <h3>人机协作</h3>
+                                    <p>AI将成为人类的得力助手，在保持人类主导地位的同时，提供智能化支持。</p>
+                                    <div class="vision-goals">
+                                        <div class="goal">
+                                            <div class="goal-icon"><i class="fas fa-star"></i></div>
+                                            <div class="goal-text">科技与人文的完美融合</div>
+                                        </div>
+                                        <div class="goal">
+                                            <div class="goal-icon"><i class="fas fa-handshake"></i></div>
+                                            <div class="goal-text">人机协同创造价值</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="typing-text conclusion">让我们带着理性与智慧，驾驭这股科技浪潮，让AI成为推动人类进步的强大动力！</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>关于开发</h4>
+                <p>开发者：祝钰霖</p>
+                <p>开发时间：2025年1月</p>
+            </div>
+            <div class="footer-section">
+                <h4>版权信息</h4>
+                <p>© 2025 祝钰霖·AI探索之旅</p>
+                <p>本网站仅用于AI+科普教育，严禁商业用途</p>
+            </div>
+            <div class="footer-section">
+                <h4>技术支持</h4>
+                <div class="tech-stack">
+                    <span class="tech-item">HTML5</span>
+                    <span class="tech-item">CSS3</span>
+                    <span class="tech-item">JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 脚本引入 -->
+    <script type="module" src="scripts/utils/helpers.js"></script>
+    <script type="module" src="scripts/components/particles.js"></script>
+    <script type="module" src="scripts/components/typing.js"></script>
+    <script type="module" src="scripts/components/scroll.js"></script>
+
+    <!-- 交互演示组件 -->
+    <script type="module" src="scripts/components/neural-network.js"></script>
+    <script type="module" src="scripts/components/voice-assistant.js"></script>
+    <script type="module" src="scripts/components/logistics-demo.js"></script>
+    <script type="module" src="scripts/components/self-driving.js"></script>
+
+    <!-- 主程序 -->
+    <script type="module" src="scripts/main.js"></script>
+</body>
+
+</html>

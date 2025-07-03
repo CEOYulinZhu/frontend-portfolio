@@ -1,0 +1,122 @@
+/* 响应式断点 */
+:root {
+    --breakpoint-xl: 1920px;
+    /* 大屏显示器 */
+    --breakpoint-lg: 1440px;
+    /* 普通笔记本 */
+    --breakpoint-md: 1280px;
+    /* 小屏笔记本 */
+    --breakpoint-sm: 1024px;
+    /* 平板/小屏设备 */
+}
+
+/* 大屏幕显示器 (1920px 及以上) */
+@media screen and (min-width: 1920px) {
+    .content-section {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .step-visual {
+        min-height: 500px;
+    }
+
+    .card-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .card-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* 普通笔记本屏幕 (1440px - 1919px) */
+@media screen and (max-width: 1919px) {
+    .content-section {
+        max-width: 1200px;
+    }
+
+    .step-visual {
+        min-height: 400px;
+    }
+
+    .workflow-visualization {
+        min-height: 350px;
+    }
+
+    .neural-network-container {
+        height: 300px;
+    }
+}
+
+/* 小屏笔记本 (1280px - 1439px) */
+@media screen and (max-width: 1439px) {
+    .content-section {
+        max-width: 1000px;
+        padding: 0 2rem;
+    }
+
+    .step-visual {
+        min-height: 350px;
+        padding: 1.5rem;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    .workflow-stage {
+        padding: 1rem;
+    }
+
+    .stage-visual {
+        height: 150px;
+    }
+
+    .data-collection {
+        gap: 1.5rem;
+    }
+
+    .data-type {
+        padding: 1.2rem;
+    }
+}
+
+/* 小屏设备 (1024px - 1279px) */
+@media screen and (max-width: 1279px) {
+    .content-section {
+        max-width: 900px;
+    }
+
+    .card-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .step-visual {
+        min-height: 300px;
+        padding: 1rem;
+    }
+
+    .workflow-visualization {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .workflow-stage {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .ai-application {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .data-collection {
+        flex-direction: column;
+    }
+
+    .data-inputs {
+        gap: 1rem;
+    }
+}
