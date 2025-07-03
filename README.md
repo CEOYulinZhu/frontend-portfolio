@@ -158,7 +158,7 @@
 1. **克隆项目**
    ```bash
    git clone [repository-url]
-   cd 前端网页展示汇总
+   cd 克隆目录
    ```
 
 2. **启动本地服务器**
