@@ -1,0 +1,311 @@
+/* 产品展示区域的全局动画定义 */
+@keyframes dotPulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes circleRotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes lineRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(20px);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.2);
+        filter: blur(25px);
+    }
+}
+
+/* 美甲特效动画 */
+@keyframes handFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-50%, -52%) rotate(2deg);
+    }
+}
+
+@keyframes nailGlow {
+
+    0%,
+    100% {
+        filter: brightness(1) drop-shadow(0 0 4px rgba(201, 169, 110, 0.3));
+    }
+
+    50% {
+        filter: brightness(1.3) drop-shadow(0 0 8px rgba(201, 169, 110, 0.5));
+    }
+}
+
+@keyframes nailShine {
+    0% {
+        left: -150%;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 150%;
+        opacity: 0;
+    }
+}
+
+@keyframes sparkleFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(10px, -10px) scale(1.5);
+        opacity: 0.8;
+    }
+}
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateY(-8px) scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* 灯笼动画 */
+@keyframes lanternFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-10px);
+    }
+}
+
+/* 情人节主题动画 */
+@keyframes letterFloat {
+
+    0%,
+    100% {
+        transform: rotateX(25deg) rotateY(5deg) translateY(0);
+    }
+
+    50% {
+        transform: rotateX(28deg) rotateY(8deg) translateY(-12px);
+    }
+}
+
+@keyframes starTwinkle {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scale(0.6);
+    }
+}
+
+/* 婚礼主题动画 */
+@keyframes happinessFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-10px) scale(1.05);
+    }
+}
+
+@keyframes charGlow {
+
+    0%,
+    100% {
+        text-shadow: 6px 6px 12px rgba(255, 0, 0, 0.4);
+    }
+
+    50% {
+        text-shadow: 6px 6px 20px rgba(255, 0, 0, 0.7);
+    }
+}
+
+@keyframes ringGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 15px rgba(255, 215, 0, 0.5),
+            inset 0 0 8px rgba(255, 215, 0, 0.3);
+        transform: rotateX(45deg) scale(1);
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px rgba(255, 215, 0, 0.7),
+            inset 0 0 12px rgba(255, 215, 0, 0.5);
+        transform: rotateX(45deg) scale(1.05);
+    }
+}
+
+@keyframes ringRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scale(0.5);
+    }
+}
+
+/* 妇女节主题动画 */
+@keyframes flowerFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+@keyframes petalRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes centerGlow {
+
+    0%,
+    100% {
+        opacity: 0.9;
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.3);
+    }
+}
+
+/* 食光机动画 */
+@keyframes foodFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-10px) scale(1.05);
+    }
+}
+
+@keyframes handRotate {
+    0% {
+        transform: translate(-50%, -100%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -100%) rotate(360deg);
+    }
+}
+
+@keyframes barGrow {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(0.8);
+    }
+}
+
+/* 笔记本动画 */
+@keyframes notebookFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) rotateZ(-5deg) translateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotateZ(-5deg) translateY(-8px);
+    }
+}

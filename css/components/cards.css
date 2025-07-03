@@ -1,0 +1,100 @@
+.card {
+    background: var(--color-dark-secondary);
+    border-radius: 8px;
+    padding: 2rem;
+    color: var(--color-text-light);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-normal);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card h3 {
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.card p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+/* 博客卡片基础样式 */
+.blog-card {
+    position: relative;
+    height: 380px;
+    background: linear-gradient(145deg,
+            rgba(40, 40, 40, 0.95),
+            rgba(32, 32, 32, 0.9));
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(201, 169, 110, 0.1);
+}
+
+/* 卡片图标 */
+.card-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 2rem;
+    position: relative;
+    border-radius: 16px;
+    background: rgba(201, 169, 110, 0.1);
+    padding: 1rem;
+    transition: all 0.4s ease;
+}
+
+/* 图标装饰 */
+[class^="icon-"] {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+            var(--color-gold),
+            var(--color-gold-light));
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+}
+
+/* 悬浮效果 */
+.blog-card:hover {
+    background: linear-gradient(145deg,
+            rgba(45, 45, 45, 0.98),
+            rgba(35, 35, 35, 0.95));
+    transform: translateY(-8px);
+    border-color: rgba(201, 169, 110, 0.2);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(201, 169, 110, 0.15),
+        0 0 30px rgba(201, 169, 110, 0.1);
+}

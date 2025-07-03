@@ -1,0 +1,1406 @@
+/* 产品展示区基础样式 */
+.products-section {
+    background: var(--color-dark);
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* 背景装饰 */
+.products-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(201, 169, 110, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(201, 169, 110, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    transform: translateZ(0);
+}
+
+/* 区域标题样式 */
+.section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+    width: 100%;
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--color-text-light);
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.header-line {
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--color-gold) 20%,
+            var(--color-gold) 80%,
+            transparent);
+    margin: 0 auto;
+    position: relative;
+}
+
+.header-line::before,
+.header-line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-gold);
+    transform: translate(-50%, -50%) scale(0);
+    animation: dotPulse 2s ease-in-out infinite;
+}
+
+.header-line::before {
+    left: 0;
+    animation-delay: 0s;
+}
+
+.header-line::after {
+    right: 0;
+    left: 100%;
+    animation-delay: 1s;
+}
+
+/* 产品展示卡片 */
+.product-showcase {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.product-card {
+    background: linear-gradient(145deg,
+            rgba(44, 44, 44, 0.9),
+            rgba(33, 33, 33, 0.8));
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    gap: 4rem;
+    position: relative;
+    border: 1px solid rgba(201, 169, 110, 0.1);
+    transition: transform 0.3s ease;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* 视觉效果区域 */
+.product-visual {
+    flex: 1;
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visual-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.effect-circle {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: circleRotate 20s linear infinite;
+}
+
+.effect-lines {
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+}
+
+.effect-lines::before,
+.effect-lines::after {
+    content: '';
+    position: absolute;
+    background: var(--color-gold);
+    animation: lineRotate 15s linear infinite;
+}
+
+.effect-glow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle,
+            rgba(201, 169, 110, 0.2) 0%,
+            transparent 70%);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(20px);
+    animation: glowPulse 8s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+/* 产品内容区域 */
+.product-content {
+    flex: 1.5;
+    position: relative;
+}
+
+.product-content h3 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--color-gold);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.product-description {
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.product-features {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.product-features span {
+    padding: 0.6rem 1.2rem;
+    background: rgba(201, 169, 110, 0.1);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    border-radius: 20px;
+    color: var(--color-gold);
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.product-features span:hover {
+    transform: translateY(-2px);
+}
+
+/* 按钮样式 */
+.btn-explore {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    text-decoration: none;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-explore span {
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.btn-explore:hover {
+    color: var(--color-dark);
+}
+
+.btn-explore:hover span {
+    transform: translateX(5px);
+}
+
+.btn-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--color-gold);
+    transition: width 0.3s ease;
+}
+
+.btn-explore:hover .btn-effect {
+    width: 100%;
+}
+
+/* 动画定义 */
+@keyframes dotPulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes circleRotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes lineRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(20px);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.2);
+        filter: blur(25px);
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .product-card {
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        margin: 0;
+        padding: 2rem;
+    }
+
+    .product-visual {
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-section {
+        padding: 4rem 0;
+    }
+
+    .product-showcase {
+        padding: 1rem;
+    }
+
+    .product-card {
+        padding: 1.5rem;
+    }
+}
+
+/* 添加美甲特色样式 */
+.nail-pattern {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    animation: handFloat 6s ease-in-out infinite;
+}
+
+/* 优化指甲形状和样式 */
+.pattern-item {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background: linear-gradient(135deg,
+            rgba(201, 169, 110, 0.2) 0%,
+            rgba(201, 169, 110, 0.4) 50%,
+            rgba(201, 169, 110, 0.2) 100%);
+    border: 1px solid rgba(201, 169, 110, 0.4);
+    border-radius: 50% 50% 40% 40% / 60% 60% 30% 30%;
+    transform-origin: bottom center;
+    backdrop-filter: blur(4px);
+    overflow: hidden;
+    box-shadow:
+        0 2px 10px rgba(201, 169, 110, 0.2),
+        inset 0 1px 4px rgba(255, 255, 255, 0.2);
+}
+
+/* 调整指甲排列，模拟真实手型 */
+.pattern-item:nth-child(1) {
+    transform: rotate(-30deg) translate(-80px, 20px) scale(0.85);
+    animation: nailGlow 4s ease-in-out infinite;
+}
+
+.pattern-item:nth-child(2) {
+    transform: rotate(-15deg) translate(-40px, 0) scale(0.95);
+    animation: nailGlow 4s ease-in-out infinite 0.8s;
+}
+
+.pattern-item:nth-child(3) {
+    transform: translate(0, -10px);
+    animation: nailGlow 4s ease-in-out infinite 1.6s;
+}
+
+.pattern-item:nth-child(4) {
+    transform: rotate(15deg) translate(40px, 0) scale(0.95);
+    animation: nailGlow 4s ease-in-out infinite 2.4s;
+}
+
+.pattern-item:nth-child(5) {
+    transform: rotate(30deg) translate(80px, 20px) scale(0.85);
+    animation: nailGlow 4s ease-in-out infinite 3.2s;
+}
+
+/* 指甲内部装饰效果 */
+.nail-art {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 30% 30%,
+            rgba(255, 255, 255, 0.2) 0%,
+            transparent 50%),
+        linear-gradient(45deg,
+            transparent 0%,
+            rgba(201, 169, 110, 0.3) 50%,
+            transparent 100%);
+    opacity: 0.8;
+}
+
+/* 指甲光泽效果 */
+.nail-shine {
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    transform: skewX(-15deg);
+    animation: nailShine 4s ease-in-out infinite;
+}
+
+/* 优化闪光效果 */
+.sparkles::before {
+    left: 30%;
+    top: 40%;
+    animation: sparkleFloat 4s ease-in-out infinite;
+}
+
+.sparkles::after {
+    right: 30%;
+    bottom: 40%;
+    animation: sparkleFloat 4s ease-in-out infinite 2s;
+}
+
+/* 协调动画效果 */
+@keyframes handFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-50%, -52%) rotate(2deg);
+    }
+}
+
+@keyframes nailGlow {
+
+    0%,
+    100% {
+        filter: brightness(1) drop-shadow(0 0 4px rgba(201, 169, 110, 0.3));
+    }
+
+    50% {
+        filter: brightness(1.3) drop-shadow(0 0 8px rgba(201, 169, 110, 0.5));
+    }
+}
+
+@keyframes nailShine {
+    0% {
+        left: -150%;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 150%;
+        opacity: 0;
+    }
+}
+
+@keyframes sparkleFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(10px, -10px) scale(1.5);
+        opacity: 0.8;
+    }
+}
+
+/* 优化图标动画，使其与整体效果协调 */
+.product-icon {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 1rem;
+}
+
+.product-icon .material-icons {
+    font-size: 2.2rem;
+    color: var(--color-gold);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 5px rgba(201, 169, 110, 0.3));
+}
+
+.product-icon .material-icons:first-child {
+    animation: iconFloat 4s ease-in-out infinite;
+}
+
+.product-icon .material-icons:last-child {
+    animation: iconFloat 4s ease-in-out infinite 2s;
+}
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateY(-8px) scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* 优化元宵节主题灯笼样式 */
+.lantern-pattern {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 重新设计灯笼样式 */
+.lantern-item {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    background: linear-gradient(135deg,
+            rgba(255, 30, 30, 0.9) 0%,
+            rgba(255, 60, 60, 0.8) 100%);
+    border: 2px solid rgba(255, 200, 200, 0.6);
+    border-radius: 30px 30px 50% 50%;
+    box-shadow:
+        0 4px 15px rgba(255, 50, 50, 0.3),
+        inset 0 2px 10px rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+}
+
+/* 调整灯笼位置 - 确保在圆圈内 */
+.lantern-item:nth-child(1) {
+    top: 30%;
+    left: 30%;
+    transform: translate(-50%, -50%) scale(0.9);
+    animation: lanternFloat 4s ease-in-out infinite;
+}
+
+.lantern-item:nth-child(2) {
+    top: 30%;
+    left: 70%;
+    transform: translate(-50%, -50%) scale(1);
+    animation: lanternFloat 4s ease-in-out infinite 1.3s;
+}
+
+.lantern-item:nth-child(3) {
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    animation: lanternFloat 4s ease-in-out infinite 2.6s;
+}
+
+/* 灯笼文字样式 */
+.lantern-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* 灯笼顶部 */
+.lantern-top {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 8px;
+    background: #ffd700;
+    border-radius: 4px 4px 0 0;
+}
+
+/* 灯笼底部流苏 */
+.lantern-tassel {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 15px;
+    background: #ffd700;
+}
+
+.lantern-tassel::before,
+.lantern-tassel::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 1px;
+    height: 12px;
+    background: #ffd700;
+}
+
+.lantern-tassel::before {
+    left: -3px;
+    transform: rotate(-15deg);
+}
+
+.lantern-tassel::after {
+    right: -3px;
+    transform: rotate(15deg);
+}
+
+/* 优化灯笼漂浮动画 */
+@keyframes lanternFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(var(--scale)) translateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(var(--scale)) translateY(-10px);
+    }
+}
+
+/* 添加灯笼光晕效果 */
+.lantern-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center,
+            rgba(255, 150, 150, 0.4) 0%,
+            transparent 70%);
+    filter: blur(5px);
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* 情人节主题样式 - 重新设计 */
+.love-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+/* 重新设计情书 */
+.love-letter {
+    position: absolute;
+    width: 120px;
+    height: 85px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(25deg) rotateY(5deg);
+    perspective: 1000px;
+    z-index: 3;
+}
+
+.letter-paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fff, #f8f8f8);
+    border-radius: 8px;
+    transform-origin: top;
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15),
+        0 3px 8px rgba(0, 0, 0, 0.1);
+    animation: letterFloat 3s ease-in-out infinite;
+}
+
+.letter-paper::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.08);
+    top: 35%;
+    left: 10%;
+    box-shadow:
+        0 12px 0 rgba(0, 0, 0, 0.08),
+        0 24px 0 rgba(0, 0, 0, 0.08);
+}
+
+.letter-seal {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #ff3366, #ff5c8d);
+    border-radius: 50%;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 3px 8px rgba(255, 51, 102, 0.3);
+}
+
+.letter-seal::after {
+    content: '♥';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 重新设计星空 */
+.star-constellation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 4px #fff, 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.star:nth-child(1) {
+    width: 3px;
+    height: 3px;
+    top: 25%;
+    left: 25%;
+    animation: starTwinkle 2s ease-in-out infinite;
+}
+
+.star:nth-child(2) {
+    width: 4px;
+    height: 4px;
+    top: 35%;
+    left: 75%;
+    animation: starTwinkle 2s ease-in-out infinite 0.7s;
+}
+
+.star:nth-child(3) {
+    width: 3px;
+    height: 3px;
+    top: 75%;
+    left: 30%;
+    animation: starTwinkle 2s ease-in-out infinite 1.3s;
+}
+
+/* 添加更多星星 */
+.star-constellation::before,
+.star-constellation::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 4px #fff, 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.star-constellation::before {
+    top: 30%;
+    left: 65%;
+    animation: starTwinkle 2s ease-in-out infinite 1.8s;
+}
+
+.star-constellation::after {
+    top: 70%;
+    left: 70%;
+    animation: starTwinkle 2s ease-in-out infinite 0.4s;
+}
+
+/* 优化动画效果 */
+@keyframes letterFloat {
+
+    0%,
+    100% {
+        transform: rotateX(25deg) rotateY(5deg) translateY(0);
+    }
+
+    50% {
+        transform: rotateX(28deg) rotateY(8deg) translateY(-12px);
+    }
+}
+
+@keyframes starTwinkle {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scale(0.6);
+    }
+}
+
+/* 婚礼主题样式 */
+.wedding-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+/* 双喜字样式 */
+.double-happiness {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 0, 0, 0.05);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: happinessFloat 4s ease-in-out infinite;
+    z-index: 3;
+}
+
+.happiness-char {
+    font-size: 60px;
+    color: #ff3333;
+    font-family: "SimSun", "宋体", serif;
+    text-shadow: 3px 3px 6px rgba(255, 0, 0, 0.3);
+    animation: charGlow 2s ease-in-out infinite;
+}
+
+.happiness-glow {
+    position: absolute;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(circle, rgba(255, 51, 51, 0.2) 0%, transparent 70%);
+    filter: blur(15px);
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* 戒指符号 */
+.ring-symbol {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    perspective: 1000px;
+}
+
+.ring-circle {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ffd700;
+    border-radius: 50%;
+    box-shadow:
+        0 0 15px rgba(255, 215, 0, 0.5),
+        inset 0 0 8px rgba(255, 215, 0, 0.3);
+    transform: rotateX(45deg);
+    background: linear-gradient(135deg,
+            rgba(255, 215, 0, 0.1) 0%,
+            rgba(255, 215, 0, 0.2) 50%,
+            rgba(255, 215, 0, 0.1) 100%);
+    animation: ringGlow 3s ease-in-out infinite;
+}
+
+.ring-circle::before {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 50%;
+    animation: ringRotate 10s linear infinite;
+}
+
+.ring-sparkle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.ring-sparkle::before,
+.ring-sparkle::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #fff;
+}
+
+.ring-sparkle::before {
+    top: 20%;
+    left: 80%;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.ring-sparkle::after {
+    top: 70%;
+    left: 20%;
+    animation: sparkle 2s ease-in-out infinite 1s;
+}
+
+/* 婚礼主题动画 */
+@keyframes happinessFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -60%) scale(1.05);
+    }
+}
+
+@keyframes charGlow {
+
+    0%,
+    100% {
+        text-shadow: 3px 3px 6px rgba(255, 0, 0, 0.3);
+    }
+
+    50% {
+        text-shadow: 3px 3px 12px rgba(255, 0, 0, 0.6);
+    }
+}
+
+@keyframes ringGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 15px rgba(255, 215, 0, 0.5),
+            inset 0 0 8px rgba(255, 215, 0, 0.3);
+        transform: rotateX(45deg) scale(1);
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px rgba(255, 215, 0, 0.7),
+            inset 0 0 12px rgba(255, 215, 0, 0.5);
+        transform: rotateX(45deg) scale(1.05);
+    }
+}
+
+@keyframes ringRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scale(0.5);
+    }
+}
+
+/* 妇女节主题样式 */
+.women-day-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+/* 花朵样式 - 调整为居中 */
+.flower-item {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: flowerFloat 4s ease-in-out infinite;
+}
+
+.petal-group {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: petalRotate 30s linear infinite;
+}
+
+.petal {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #FF69B4, #FFB6C1);
+    border-radius: 50% 50% 0 50%;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-35px);
+    opacity: 0.85;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+}
+
+.flower-center {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #FFD700, #FFC0CB);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    animation: centerGlow 3s ease-in-out infinite;
+}
+
+/* 动画效果 */
+@keyframes flowerFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+@keyframes petalRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes centerGlow {
+
+    0%,
+    100% {
+        opacity: 0.9;
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.3);
+    }
+}
+
+/* 食光机主题样式 */
+.food-timer-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+/* 食材元素 */
+.food-item {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.food-item.vegetable {
+    top: 30%;
+    left: 20%;
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    animation: foodFloat 4s ease-in-out infinite;
+}
+
+.food-item.vegetable::before {
+    content: '🥦';
+    position: absolute;
+    font-size: 22px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.food-item.fruit {
+    top: 30%;
+    right: 20%;
+    background: linear-gradient(135deg, #FF9800, #FFEB3B);
+    animation: foodFloat 4s ease-in-out infinite 0.5s;
+}
+
+.food-item.fruit::before {
+    content: '🍎';
+    position: absolute;
+    font-size: 22px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.food-item.meat {
+    bottom: 25%;
+    left: 25%;
+    background: linear-gradient(135deg, #F44336, #E91E63);
+    animation: foodFloat 4s ease-in-out infinite 1s;
+}
+
+.food-item.meat::before {
+    content: '🍗';
+    position: absolute;
+    font-size: 22px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 时钟元素 */
+.timer-circle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 3px solid #64B5F6;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(33, 150, 243, 0.1);
+    box-shadow:
+        0 0 15px rgba(33, 150, 243, 0.3),
+        inset 0 0 15px rgba(33, 150, 243, 0.2);
+    z-index: 1;
+}
+
+.timer-hand {
+    position: absolute;
+    width: 3px;
+    height: 30px;
+    background: #2196F3;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translate(-50%, -100%);
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+    animation: handRotate 10s linear infinite;
+}
+
+.timer-center {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #2196F3;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+}
+
+/* 营养图表 */
+.nutrition-chart {
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    bottom: 25%;
+    right: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 2;
+}
+
+.chart-bar {
+    width: 12px;
+    border-radius: 6px 6px 0 0;
+    background: linear-gradient(to top, #4CAF50, #8BC34A);
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+.chart-bar:nth-child(1) {
+    height: 25px;
+    animation: barGrow 3s ease-in-out infinite;
+}
+
+.chart-bar:nth-child(2) {
+    height: 40px;
+    animation: barGrow 3s ease-in-out infinite 0.5s;
+}
+
+.chart-bar:nth-child(3) {
+    height: 30px;
+    animation: barGrow 3s ease-in-out infinite 1s;
+}
+
+/* 动画效果 */
+@keyframes foodFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.05);
+    }
+}
+
+@keyframes handRotate {
+    0% {
+        transform: translate(-50%, -100%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -100%) rotate(360deg);
+    }
+}
+
+@keyframes barGrow {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(0.8);
+    }
+}
+
+/* 食光机使用手册样式 - 重新设计 */
+.manual-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 笔记本设计 */
+.manual-notebook {
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(-5deg);
+    transform-style: preserve-3d;
+    z-index: 2;
+    animation: notebookFloat 3s ease-in-out infinite;
+}
+
+.notebook-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #455A64, #607D8B);
+    border-radius: 3px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.notebook-cover::after {
+    content: '使用指南';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.notebook-binding {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background: #37474F;
+    border-radius: 2px 0 0 2px;
+    left: -5px;
+    top: 0;
+    z-index: 3;
+}
+
+.notebook-binding::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 6px;
+    height: 80%;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 4px,
+            rgba(255, 255, 255, 0.3) 4px,
+            rgba(255, 255, 255, 0.3) 8px);
+    transform: translateX(-50%);
+}
+
+.notebook-page {
+    position: absolute;
+    width: 96%;
+    height: 95%;
+    background: #f9f9f9;
+    border-radius: 0 3px 3px 0;
+    top: 2.5%;
+    right: 0;
+    z-index: 1;
+    transform: translateX(2px);
+}
+
+.notebook-page::before {
+    content: '';
+    position: absolute;
+    left: 10%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: rgba(200, 200, 200, 0.5);
+}
+
+.notebook-page::after {
+    content: '';
+    position: absolute;
+    left: 3%;
+    top: 10%;
+    width: 88%;
+    height: 1px;
+    background: rgba(200, 200, 200, 0.5);
+    box-shadow:
+        0 10px 0 rgba(200, 200, 200, 0.5),
+        0 20px 0 rgba(200, 200, 200, 0.5),
+        0 30px 0 rgba(200, 200, 200, 0.5),
+        0 40px 0 rgba(200, 200, 200, 0.5),
+        0 50px 0 rgba(200, 200, 200, 0.5),
+        0 60px 0 rgba(200, 200, 200, 0.5),
+        0 70px 0 rgba(200, 200, 200, 0.5);
+}
+
+/* 添加笔记本浮动动画 */
+@keyframes notebookFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) rotateZ(-5deg) translateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotateZ(-5deg) translateY(-8px);
+    }
+}

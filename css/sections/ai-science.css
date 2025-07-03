@@ -1,0 +1,248 @@
+/* AI科普区域基础样式 */
+.ai-section {
+    background: var(--gradient-primary);
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 艺术风格科技背景 */
+.ai-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 30% 40%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(244, 114, 182, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.02) 0%, transparent 40%);
+    opacity: 0.8;
+    animation: artBackgroundFlow 20s ease-in-out infinite;
+}
+
+/* 内容容器 */
+.ai-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 4rem;
+    background: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+}
+
+.ai-content::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg,
+            rgba(244, 114, 182, 0.15),
+            rgba(59, 130, 246, 0.15),
+            rgba(6, 182, 212, 0.15));
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.ai-content:hover::before {
+    opacity: 1;
+}
+
+/* 区域标题样式统一 */
+.ai-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.ai-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: var(--color-text-primary);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -1px;
+}
+
+/* 标题装饰线 */
+.header-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--color-accent),
+            transparent);
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+/* 描述文本 */
+.ai-content p {
+    color: var(--color-text-secondary);
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 3.5rem;
+    font-weight: 500;
+}
+
+/* 按钮样式 */
+.ai-content .btn.secondary {
+    padding: 1.2rem 3.5rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: white;
+    background: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    font-weight: 600;
+    box-shadow: var(--shadow-accent);
+    font-family: var(--font-heading);
+}
+
+.ai-content .btn.secondary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-art-blue), var(--color-art-cyan));
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+/* 按钮悬浮效果 */
+.ai-content .btn.secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+    border-color: var(--color-art-blue);
+}
+
+.ai-content .btn.secondary:hover::before {
+    transform: translateX(0);
+}
+
+/* 装饰元素 */
+.ai-decoration {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+/* 神经网络背景 */
+.neural-nodes {
+    position: absolute;
+    inset: -20%;
+    z-index: 1;
+}
+
+/* 节点样式 */
+.node {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(59, 130, 246, 0.4);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+    animation: nodePulse 3s ease-in-out infinite;
+}
+
+/* 连接线效果 */
+.neural-connection {
+    position: absolute;
+    height: 2px;
+    width: 150px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(59, 130, 246, 0.2),
+            transparent);
+    animation: connectionFlow 4s linear infinite;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+/* 动画定义 */
+@keyframes artBackgroundFlow {
+
+    0%,
+    100% {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 0.8;
+    }
+
+    33% {
+        transform: translateX(10px) translateY(-5px) scale(1.02);
+        opacity: 0.9;
+    }
+
+    66% {
+        transform: translateX(-5px) translateY(10px) scale(0.98);
+        opacity: 0.7;
+    }
+}
+
+@keyframes nodePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: scale(1.8);
+        opacity: 0.7;
+    }
+}
+
+@keyframes connectionFlow {
+    0% {
+        transform: translateX(-100%) scaleX(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateX(0) scaleX(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(100%) scaleX(0.5);
+        opacity: 0;
+    }
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .ai-section {
+        padding: 4rem 0;
+    }
+
+    .ai-content {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+
+    .ai-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .ai-content p {
+        font-size: 1.2rem;
+    }
+
+    .ai-content .btn.secondary {
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+    }
+}

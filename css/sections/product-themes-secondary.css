@@ -1,0 +1,321 @@
+/* 其余产品主题卡片的样式 */
+
+/* 婚礼主题样式 */
+.wedding-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+/* 双喜字样式 - 大字居中 */
+.double-happiness {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 0, 0, 0.05);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: happinessFloat 4s ease-in-out infinite;
+    z-index: 3;
+}
+
+.happiness-char {
+    font-size: 120px;
+    color: #ff3333;
+    font-family: "SimSun", "宋体", serif;
+    text-shadow: 6px 6px 12px rgba(255, 0, 0, 0.4);
+    animation: charGlow 2s ease-in-out infinite;
+}
+
+.happiness-glow {
+    position: absolute;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(circle, rgba(255, 51, 51, 0.2) 0%, transparent 70%);
+    filter: blur(15px);
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* 戒指符号 */
+.ring-symbol {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    perspective: 1000px;
+}
+
+.ring-circle {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ffd700;
+    border-radius: 50%;
+    box-shadow:
+        0 0 15px rgba(255, 215, 0, 0.5),
+        inset 0 0 8px rgba(255, 215, 0, 0.3);
+    transform: rotateX(45deg);
+    background: linear-gradient(135deg,
+            rgba(255, 215, 0, 0.1) 0%,
+            rgba(255, 215, 0, 0.2) 50%,
+            rgba(255, 215, 0, 0.1) 100%);
+    animation: ringGlow 3s ease-in-out infinite;
+}
+
+.ring-circle::before {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 50%;
+    animation: ringRotate 10s linear infinite;
+}
+
+.ring-sparkle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.ring-sparkle::before,
+.ring-sparkle::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #fff;
+}
+
+.ring-sparkle::before {
+    top: 20%;
+    left: 80%;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.ring-sparkle::after {
+    top: 70%;
+    left: 20%;
+    animation: sparkle 2s ease-in-out infinite 1s;
+}
+
+/* 妇女节主题样式 */
+.women-day-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+/* 花朵样式 */
+.flower-item {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: flowerFloat 4s ease-in-out infinite;
+}
+
+.petal-group {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: petalRotate 30s linear infinite;
+}
+
+.petal {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #FF69B4, #FFB6C1);
+    border-radius: 50% 50% 0 50%;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-35px);
+    opacity: 0.85;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+}
+
+.flower-center {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #FFD700, #FFC0CB);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    animation: centerGlow 3s ease-in-out infinite;
+}
+
+/* 食光机主题样式 */
+.food-timer-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+/* 大鸡腿元素 - 居中显示 */
+.food-item.meat {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #F44336, #E91E63);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(244, 67, 54, 0.3);
+    z-index: 2;
+    animation: foodFloat 4s ease-in-out infinite;
+}
+
+.food-item.meat::before {
+    content: '🍗';
+    position: absolute;
+    font-size: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+/* 食光机使用手册样式 */
+.manual-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 笔记本设计 */
+.manual-notebook {
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(-5deg);
+    transform-style: preserve-3d;
+    z-index: 2;
+    animation: notebookFloat 3s ease-in-out infinite;
+}
+
+.notebook-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #455A64, #607D8B);
+    border-radius: 3px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.notebook-cover::after {
+    content: '使用指南';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.notebook-binding {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background: #37474F;
+    border-radius: 2px 0 0 2px;
+    left: -5px;
+    top: 0;
+    z-index: 3;
+}
+
+.notebook-binding::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 6px;
+    height: 80%;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 4px,
+            rgba(255, 255, 255, 0.3) 4px,
+            rgba(255, 255, 255, 0.3) 8px);
+    transform: translateX(-50%);
+}
+
+.notebook-page {
+    position: absolute;
+    width: 96%;
+    height: 95%;
+    background: #f9f9f9;
+    border-radius: 0 3px 3px 0;
+    top: 2.5%;
+    right: 0;
+    z-index: 1;
+    transform: translateX(2px);
+}
+
+.notebook-page::before {
+    content: '';
+    position: absolute;
+    left: 10%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: rgba(200, 200, 200, 0.5);
+}
+
+.notebook-page::after {
+    content: '';
+    position: absolute;
+    left: 3%;
+    top: 10%;
+    width: 88%;
+    height: 1px;
+    background: rgba(200, 200, 200, 0.5);
+    box-shadow:
+        0 10px 0 rgba(200, 200, 200, 0.5),
+        0 20px 0 rgba(200, 200, 200, 0.5),
+        0 30px 0 rgba(200, 200, 200, 0.5),
+        0 40px 0 rgba(200, 200, 200, 0.5),
+        0 50px 0 rgba(200, 200, 200, 0.5),
+        0 60px 0 rgba(200, 200, 200, 0.5),
+        0 70px 0 rgba(200, 200, 200, 0.5);
+}

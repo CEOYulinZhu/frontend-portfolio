@@ -1,0 +1,345 @@
+/* 应用作品区域样式 */
+
+/* AI提示词宝库样式 */
+.ai-prompt-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.prompt-decoration {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    transform-style: preserve-3d;
+    animation: promptFloat 4s ease-in-out infinite;
+}
+
+/* 代码块装饰 */
+.code-block {
+    position: absolute;
+    width: 100px;
+    height: 120px;
+    background: rgba(40, 44, 52, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(-15deg);
+    overflow: hidden;
+    padding: 15px;
+    z-index: 1;
+}
+
+.code-line {
+    height: 10px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    animation: codePulse 3s ease-in-out infinite;
+}
+
+.code-line:nth-child(1) {
+    width: 80%;
+    background: linear-gradient(90deg, #61dafb, #a8edea);
+    animation-delay: 0s;
+}
+
+.code-line:nth-child(2) {
+    width: 60%;
+    background: linear-gradient(90deg, #f06292, #ff9190);
+    animation-delay: 0.5s;
+}
+
+.code-line:nth-child(3) {
+    width: 70%;
+    background: linear-gradient(90deg, #ffeb3b, #ffd54f);
+    animation-delay: 1s;
+}
+
+/* AI图标 */
+.prompt-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    top: 30%;
+    right: 10%;
+    box-shadow: 0 8px 20px rgba(106, 17, 203, 0.4);
+    z-index: 2;
+    transform: translateZ(20px);
+    animation: iconPulse 3s ease-in-out infinite;
+}
+
+/* 闪光效果 */
+.sparkle-group {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white, 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.sparkle:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation: sparkleTwinkle 2s ease-in-out infinite;
+}
+
+.sparkle:nth-child(2) {
+    top: 70%;
+    right: 30%;
+    animation: sparkleTwinkle 2s ease-in-out infinite 0.7s;
+}
+
+.sparkle:nth-child(3) {
+    bottom: 10%;
+    left: 40%;
+    animation: sparkleTwinkle 2s ease-in-out infinite 1.3s;
+}
+
+/* 动画效果 */
+@keyframes promptFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotateZ(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotateZ(2deg);
+    }
+}
+
+@keyframes codePulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scaleX(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleX(0.95);
+    }
+}
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+        transform: translateZ(20px) scale(1);
+        box-shadow: 0 8px 20px rgba(106, 17, 203, 0.4);
+    }
+
+    50% {
+        transform: translateZ(20px) scale(1.1);
+        box-shadow: 0 12px 30px rgba(106, 17, 203, 0.6);
+    }
+}
+
+@keyframes sparkleTwinkle {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scale(0.5);
+    }
+}
+
+/* 小学分级口算系统样式 */
+.math-calculation-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.calculation-decoration {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    transform-style: preserve-3d;
+    animation: calculationFloat 4s ease-in-out infinite;
+}
+
+/* 数学符号区域 */
+.math-symbols {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    height: 30px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.symbol {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(255, 94, 98, 0.4);
+    animation: symbolPulse 3s ease-in-out infinite;
+}
+
+.symbol:nth-child(1) {
+    animation-delay: 0s;
+    background: linear-gradient(135deg, #56ccf2, #2f80ed);
+}
+
+.symbol:nth-child(2) {
+    animation-delay: 0.5s;
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+}
+
+.symbol:nth-child(3) {
+    animation-delay: 1s;
+    background: linear-gradient(135deg, #b06ab3, #4568dc);
+}
+
+.symbol:nth-child(4) {
+    animation-delay: 1.5s;
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+/* 数字网格区域 */
+.number-grid {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background: rgba(40, 44, 52, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%) rotateX(5deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 1;
+}
+
+.number-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.number {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.number:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* 进度指示器 */
+.progress-indicator {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100px;
+    height: 10px;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.level-marker {
+    width: 20px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.level-marker.active {
+    background: linear-gradient(90deg, #f5af19, #f12711);
+    box-shadow: 0 0 10px rgba(245, 175, 25, 0.7);
+    animation: markerPulse 2s ease-in-out infinite;
+}
+
+/* 小学分级口算系统动画效果 */
+@keyframes calculationFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotateZ(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotateZ(2deg);
+    }
+}
+
+@keyframes symbolPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 10px rgba(255, 94, 98, 0.4);
+    }
+
+    50% {
+        transform: scale(1.2);
+        box-shadow: 0 6px 15px rgba(255, 94, 98, 0.6);
+    }
+}
+
+@keyframes markerPulse {
+
+    0%,
+    100% {
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(1.3);
+    }
+}

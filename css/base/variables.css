@@ -1,0 +1,107 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.site-body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* 艺术风格配色系统 - 灵感来自设计图片 */
+    --color-primary: #fdf2f8;
+    /* 浅粉基色 */
+    --color-secondary: #ffffff;
+    /* 纯白 */
+    --color-accent: #1e293b;
+    /* 深色强调（黑色按钮） */
+    --color-accent-light: #374151;
+    /* 稍浅的深色 */
+    --color-accent-dark: #0f172a;
+    /* 更深的黑 */
+
+    /* 艺术插画点缀色彩 */
+    --color-art-blue: #3b82f6;
+    /* 蓝色点缀 */
+    --color-art-yellow: #fbbf24;
+    /* 黄色点缀 */
+    --color-art-pink: #f472b6;
+    /* 粉色点缀 */
+    --color-art-cyan: #06b6d4;
+    /* 青色点缀 */
+
+    --color-neutral: #f8fafc;
+    --color-neutral-light: #fdf2f8;
+    --color-text-primary: #1e293b;
+    --color-text-secondary: #64748b;
+    --color-text-muted: #94a3b8;
+    --color-text-accent: #1e293b;
+    --color-border: #e2e8f0;
+    --color-border-light: #f1f5f9;
+
+    /* 保持向后兼容 */
+    --color-dark: var(--color-primary);
+    --color-dark-secondary: var(--color-secondary);
+    --color-gold: var(--color-art-blue);
+    --color-gold-light: var(--color-art-cyan);
+    --color-cream: var(--color-neutral-light);
+    --color-text-light: var(--color-text-primary);
+    --color-text-dark: var(--color-text-primary);
+
+    /* 艺术风格渐变 - 浅粉到浅蓝 */
+    --gradient-primary: linear-gradient(135deg, #fdf2f8 0%, #eff6ff 50%, #f0f9ff 100%);
+    --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    --gradient-art: linear-gradient(45deg, var(--color-art-pink) 0%, var(--color-art-blue) 50%, var(--color-art-cyan) 100%);
+    --gradient-dark: var(--gradient-primary);
+    --gradient-gold: var(--gradient-art);
+
+    /* 阴影 */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-accent: 0 4px 12px rgba(30, 41, 59, 0.15);
+    --shadow-art: 0 8px 25px rgba(244, 114, 182, 0.15);
+    --shadow-gold: var(--shadow-art);
+
+    /* 现代字体系统 */
+    --font-primary: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --font-heading: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+    /* 间距系统 - 增加留白 */
+    --spacing-xs: 0.75rem;
+    --spacing-sm: 1.5rem;
+    --spacing-md: 3rem;
+    --spacing-lg: 6rem;
+    --spacing-xl: 8rem;
+
+    /* 断点 */
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+
+    /* 容器宽度 */
+    --container-max-width: 1200px;
+
+    /* 动画时间 */
+    --transition-fast: 0.2s;
+    --transition-normal: 0.3s;
+    --transition-slow: 0.5s;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --container-max-width: 100%;
+        --spacing-md: 2rem;
+        --spacing-lg: 4rem;
+    }
+}
