@@ -1,0 +1,540 @@
+/**
+ * AI提示词宝库 - AI工具页面样式
+ */
+
+
+
+/* 工具分类导航样式 */
+.tools-nav {
+    background: linear-gradient(to right, #f8f9fa, #ffffff, #f8f9fa);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: var(--header-height);
+    z-index: 99;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.tools-nav-scroll {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+}
+
+.nav-btn {
+    padding: 0.8rem 1.8rem;
+    border: none;
+    background: #ffffff;
+    color: #555;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26, 115, 232, 0.1), rgba(26, 115, 232, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-btn:hover {
+    color: #1a73e8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.15);
+}
+
+.nav-btn:hover::before {
+    opacity: 1;
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, #1a73e8, #1557b0);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+    font-weight: 500;
+}
+
+.nav-btn.active:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(26, 115, 232, 0.35);
+}
+
+/* 精选工具区域样式 */
+.featured-tools {
+    padding: 4rem 0;
+    background-color: var(--light-color);
+}
+
+.featured-tools h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    color: var(--gray-900);
+    position: relative;
+}
+
+.featured-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.featured-tool-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.featured-tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.tool-image {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.tool-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.featured-tool-card:hover .tool-image img {
+    transform: scale(1.05);
+}
+
+.tool-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.tool-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.tool-content h3 {
+    margin: 0 0 0.8rem 0;
+    font-size: 1.4rem;
+    color: var(--gray-900);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.3;
+    height: 2.6em;
+}
+
+.tool-content p {
+    margin: 0 0 1.2rem 0;
+    color: var(--gray-700);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 4.5em;
+}
+
+.tool-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    margin-top: auto;
+}
+
+.tool-category {
+    background-color: var(--gray-100);
+    color: var(--gray-700);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.tool-rating {
+    color: #FFB400;
+    font-size: 0.9rem;
+}
+
+.tool-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: auto;
+}
+
+/* 工具页面按钮样式 */
+.tool-actions .btn,
+.load-more .btn,
+.submit-tool .btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: none;
+}
+
+.tool-actions .btn-primary,
+.submit-tool .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.tool-actions .btn-primary:hover,
+.submit-tool .btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.tool-actions .btn-secondary,
+.load-more .btn-secondary {
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+}
+
+.tool-actions .btn-secondary:hover,
+.load-more .btn-secondary:hover {
+    background-color: var(--gray-300);
+    transform: translateY(-2px);
+}
+
+/* 所有工具区域样式 */
+.all-tools {
+    padding: 4rem 0;
+}
+
+.tools-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.tools-header h2 {
+    font-size: 1.8rem;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.tools-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tools-filter label {
+    color: var(--gray-700);
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.tools-filter select {
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius);
+    background-color: white;
+    color: var(--gray-800);
+    font-size: 0.95rem;
+    min-width: 120px;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1em;
+}
+
+.tools-filter select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.tool-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    padding: 1rem 1.25rem;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tool-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.tool-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    gap: 0.8rem;
+}
+
+.tool-card-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* 工具图标文字样式 */
+.tool-icon-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    min-width: 32px;
+}
+
+.tool-icon-text i {
+    opacity: 0.9;
+    transition: transform 0.2s ease;
+}
+
+.tool-card:hover .tool-icon-text i {
+    transform: scale(1.2);
+}
+
+.tool-card-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.3;
+}
+
+.tool-card p {
+    margin: 0 0 0.8rem 0;
+    font-size: 0.9rem;
+    color: var(--gray-700);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 2.8em;
+}
+
+.tool-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    margin-top: auto;
+}
+
+.tool-card-category {
+    background-color: var(--gray-100);
+    color: var(--gray-700);
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.tool-card-rating {
+    color: var(--gray-700);
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.tool-card-rating::before {
+    content: "★ ";
+    color: #FFB400;
+}
+
+.tool-card-actions {
+    text-align: right;
+    margin-top: 0.5rem;
+}
+
+.tool-card-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.tool-card-link:hover {
+    text-decoration: underline;
+}
+
+.load-more {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* 提交工具区域样式 */
+.submit-tool {
+    position: relative;
+}
+
+
+.submit-tool-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.submit-tool-content h2 {
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.submit-tool-content p {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.1rem;
+    color: var(--gray-700);
+    line-height: 1.5;
+}
+
+.submit-tool .btn-primary {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 6px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.submit-tool .btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 工具图标占位符样式 */
+.tool-icon-placeholder {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.tool-icon-placeholder i {
+    opacity: 0.5;
+    font-size: 5rem;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.tool-name-overlay {
+    font-size: 3rem;
+    font-weight: 700;
+    opacity: 0.8;
+    text-transform: uppercase;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tool-card:hover .tool-icon-placeholder i {
+    transform: scale(1.1);
+}
+
+.tool-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-image-placeholder i {
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
+    transition: transform 0.3s ease;
+    font-size: 4rem;
+}
+
+.tool-featured-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 0 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.featured-tool-card:hover .tool-image-placeholder i {
+    transform: scale(1.1);
+}

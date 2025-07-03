@@ -1,0 +1,137 @@
+/* 网站地图页面响应式样式 */
+
+/* 平板设备 (992px及以下) */
+@media screen and (max-width: 992px) {
+    .sitemap-header {
+        padding: 4rem 0;
+    }
+
+    .sitemap-icon i {
+        font-size: 3rem;
+    }
+
+    .sitemap-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .sitemap-header p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    .sitemap-content {
+        padding: 3rem 0;
+    }
+
+    .sitemap-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .sitemap-section h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* 手机设备 (768px及以下) */
+@media screen and (max-width: 768px) {
+    .sitemap-header {
+        padding: 3rem 0;
+    }
+
+    .sitemap-icon i {
+        font-size: 2.5rem;
+    }
+
+    .sitemap-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .sitemap-header p {
+        font-size: 1rem;
+        padding: 0 1.5rem;
+    }
+
+    .sitemap-content {
+        padding: 2rem 0;
+    }
+
+    .sitemap-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .sitemap-section {
+        padding: 1.2rem;
+    }
+
+    .sitemap-section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.6rem;
+    }
+
+    .sitemap-list a {
+        padding: 0.4rem;
+    }
+
+    .sitemap-list i {
+        font-size: 1rem;
+        margin-right: 0.6rem;
+    }
+
+    .sitemap-header-decoration {
+        display: none;
+    }
+}
+
+/* 小型手机设备 (375px及以下) */
+@media screen and (max-width: 375px) {
+    .sitemap-header {
+        padding: 2rem 0;
+    }
+
+    .sitemap-icon i {
+        font-size: 2rem;
+    }
+
+    .sitemap-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .sitemap-header p {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+
+    .sitemap-content {
+        padding: 1.5rem 0;
+    }
+
+    .sitemap-grid {
+        gap: 1rem;
+    }
+
+    .sitemap-section {
+        padding: 1rem;
+    }
+
+    .sitemap-section h2 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .sitemap-list li {
+        margin-bottom: 0.8rem;
+    }
+
+    .sitemap-list a {
+        font-size: 0.9rem;
+    }
+
+    .sitemap-list i {
+        font-size: 0.9rem;
+        margin-right: 0.5rem;
+    }
+}

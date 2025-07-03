@@ -1,0 +1,89 @@
+/* FAQ页面响应式样式 */
+
+/* 平板设备 (992px及以下) */
+@media (max-width: 992px) {
+    .faq-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .faq-header p {
+        font-size: 1rem;
+    }
+
+    .faq-section h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* 手机设备 (768px及以下) */
+@media (max-width: 768px) {
+    .faq-header {
+        padding: 2rem 0;
+    }
+
+    .faq-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .faq-header p {
+        font-size: 0.95rem;
+    }
+
+    .faq-nav {
+        padding: 0.5rem 0;
+    }
+
+    .faq-nav-item {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .faq-content {
+        padding: 2rem 0;
+    }
+
+    .faq-section {
+        margin-bottom: 2rem;
+    }
+
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .contact-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .contact-card .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* 小型手机设备 (480px及以下) */
+@media (max-width: 480px) {
+    .faq-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .faq-nav-list {
+        padding: 0.5rem 1rem;
+    }
+
+    .faq-question {
+        padding: 1rem;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 0 1rem 1rem;
+    }
+
+    .contact-card {
+        margin: 2rem 1rem 0;
+    }
+}

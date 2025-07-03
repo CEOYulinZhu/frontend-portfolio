@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分类详情 - AI提示词宝库</title>
+    <meta name="description" content="浏览特定分类下的所有AI提示词，提高您的AI使用效率">
+
+    <!-- CSS 文件 -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../responsive/main-responsive.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../responsive/header-responsive.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../responsive/footer-responsive.css">
+    <link rel="stylesheet" href="../css/category.css">
+    <link rel="stylesheet" href="../responsive/category-responsive.css">
+
+    <!-- Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <!-- 加载动画 -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- 分类头部 -->
+        <section class="category-header">
+            <div class="container">
+                <div class="category-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="category-info">
+                    <h1 id="category-title">编程开发</h1>
+                    <p id="category-description">加速代码编写与问题解决的AI提示词集合</p>
+                </div>
+                <div class="category-stats">
+                    <div class="stat">
+                        <span id="prompt-count">38</span>
+                        <span>提示词</span>
+                    </div>
+                    <div class="stat">
+                        <span id="avg-rating">4.7</span>
+                        <span>平均评分</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 筛选区域 -->
+        <section class="filter-section">
+            <div class="container">
+                <div class="filter-row">
+                    <div class="filter-dropdown">
+                        <label for="subcategory-filter">子分类</label>
+                        <select id="subcategory-filter" class="filter-select">
+                            <option value="all">全部</option>
+                            <option value="web">Web开发</option>
+                            <option value="mobile">移动开发</option>
+                            <option value="backend">后端开发</option>
+                            <option value="database">数据库</option>
+                            <option value="devops">DevOps</option>
+                        </select>
+                    </div>
+                    <div class="filter-dropdown">
+                        <label for="sort-filter">排序方式</label>
+                        <select id="sort-filter" class="filter-select">
+                            <option value="popular">最受欢迎</option>
+                            <option value="newest">最新添加</option>
+                            <option value="rating">最高评分</option>
+                        </select>
+                    </div>
+                    <div class="search-container">
+                        <label for="prompt-search">搜索</label>
+                        <div class="search-input-wrapper">
+                            <input type="text" id="prompt-search" placeholder="搜索该分类下的提示词...">
+                            <button id="prompt-search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="active-filters" id="active-filters">
+                    <!-- 活动筛选标签将在这里动态生成 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 提示词列表区域 -->
+        <section class="prompts-section">
+            <div class="container">
+                <div class="prompts-header">
+                    <h2>提示词列表</h2>
+                    <span id="filtered-count">显示 <strong>0</strong> 个提示词</span>
+                </div>
+                <div class="prompts-grid" id="prompts-grid">
+                    <!-- 提示词卡片将由JavaScript动态生成 -->
+                </div>
+                <!-- 分页 -->
+                <div class="pagination">
+                    <button class="page-btn" id="prev-page" disabled>
+                        <i class="fas fa-chevron-left"></i> 上一页
+                    </button>
+                    <div class="page-numbers" id="page-numbers">
+                        <!-- 页码将由JavaScript动态生成 -->
+                    </div>
+                    <button class="page-btn" id="next-page">
+                        下一页 <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 相关分类 -->
+        <section class="related-categories">
+            <div class="container">
+                <h2>相关分类</h2>
+                <div class="related-categories-grid">
+                    <a href="category.html?cat=tutorials" class="related-category-card" target="_blank">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>技术教程</h3>
+                        <span>24 个提示词</span>
+                    </a>
+                    <a href="category.html?cat=project" class="related-category-card" target="_blank">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>项目管理</h3>
+                        <span>19 个提示词</span>
+                    </a>
+                    <a href="category.html?cat=ai-tools" class="related-category-card" target="_blank">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI工具</h3>
+                        <span>31 个提示词</span>
+                    </a>
+                    <a href="category.html?cat=learning" class="related-category-card" target="_blank">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>学习资源</h3>
+                        <span>27 个提示词</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页面底部 -->
+    <footer id="footer"></footer>
+
+    <!-- JavaScript 文件 -->
+    <script src="../js/main.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/category.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+/* 首页响应式样式 */
+
+/* 大屏幕设备默认样式 (992px以上) */
+.hero-content {
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.cta-buttons {
+    justify-content: flex-start;
+}
+
+.features-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.testimonials-container {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* 平板设备 (992px及以下) */
+@media (max-width: 992px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .prompt-card {
+        flex: 0 0 calc(50% - var(--spacing-md));
+    }
+}
+
+/* 手机设备 (768px及以下) */
+@media (max-width: 768px) {
+    .hero-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .prompt-card {
+        flex: 0 0 calc(100% - var(--spacing-md));
+    }
+
+    .testimonials-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* 小型手机设备 (480px及以下) */
+@media (max-width: 480px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+}

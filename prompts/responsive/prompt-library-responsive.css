@@ -1,0 +1,20 @@
+/* 提示词库页面响应式样式 */
+
+/* 提示词网格响应式布局 */
+@media (min-width: 576px) {
+    .prompts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .prompts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .prompts-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

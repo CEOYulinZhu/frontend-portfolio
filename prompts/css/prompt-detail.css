@@ -1,0 +1,480 @@
+/**
+ * AI提示词宝库 - 提示词详情页样式
+ */
+
+/* 提示词详情区域 */
+.prompt-detail-section {
+    padding: 3rem 0;
+}
+
+.prompt-detail-container {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* 加载动画 */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(var(--primary-rgb), 0.2);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 提示词详情内容 */
+.prompt-header {
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.1), rgba(var(--primary-rgb), 0.2));
+    border-bottom: 1px solid var(--border-color);
+}
+
+.prompt-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.prompt-title {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+.prompt-category {
+    display: inline-block;
+    background-color: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.prompt-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.prompt-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.prompt-meta i {
+    margin-right: 0.5rem;
+}
+
+.prompt-rating {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.prompt-rating .stars {
+    display: flex;
+    margin-right: 0.5rem;
+}
+
+.prompt-rating i {
+    color: var(--star-color);
+    margin-right: 0.2rem;
+}
+
+.prompt-rating span {
+    font-weight: 600;
+}
+
+.prompt-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.prompt-body {
+    padding: 2rem;
+}
+
+.prompt-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.prompt-content-box {
+    background-color: #f0f2f5;
+    border-radius: 10px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    position: relative;
+    border: 1px solid #e4e6eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.prompt-content-text {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    color: #2c3e50;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: var(--button-secondary-bg);
+    color: var(--button-secondary-text);
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.copy-button:hover {
+    background-color: var(--button-secondary-hover);
+}
+
+.prompt-usage {
+    margin-top: 2rem;
+}
+
+.prompt-usage h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.usage-steps {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.usage-steps li {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+.step-content p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.prompt-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.prompt-tag {
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.prompt-tag:hover {
+    background-color: var(--tag-hover-bg);
+}
+
+/* 相关提示词 */
+.related-prompts {
+    padding: 3rem 0;
+}
+
+.related-prompts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.related-prompt-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.related-prompt-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.related-prompt-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.related-prompt-category {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.related-prompt-rating {
+    display: flex;
+    align-items: center;
+}
+
+.related-prompt-rating i {
+    color: var(--star-color);
+    font-size: 0.8rem;
+    margin-right: 0.2rem;
+}
+
+.related-prompt-rating span {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.related-prompt-body {
+    padding: 1rem;
+}
+
+.related-prompt-title {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+.related-prompt-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.related-prompt-link {
+    display: inline-block;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.related-prompt-link:hover {
+    color: var(--primary-hover);
+}
+
+/* 用户评论 */
+.prompt-comments {
+    padding: 3rem 0;
+    background-color: #f8f9fa;
+}
+
+.comments-container {
+    margin-top: 2rem;
+}
+
+.comment-form {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.comment-form h3 {
+    margin: 0 0 1.5rem 0;
+    color: var(--text-color);
+    font-size: 1.3rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e4e6eb;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: vertical;
+    min-height: 120px;
+    transition: all 0.3s ease;
+}
+
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.1);
+}
+
+.rating-input {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.rating-input i {
+    font-size: 1.5rem;
+    color: #d1d5db;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rating-input i.fas {
+    color: var(--star-color);
+}
+
+.rating-input i:hover {
+    transform: scale(1.1);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #1557b0;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comments-list {
+    margin-top: 2rem;
+}
+
+.comment {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--card-shadow);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.comment-author {
+    display: flex;
+    align-items: center;
+}
+
+.comment-author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    object-fit: cover;
+}
+
+.comment-author-info h4 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.comment-author-info p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.comment-rating {
+    display: flex;
+    align-items: center;
+}
+
+.comment-rating i {
+    color: var(--star-color);
+    margin-right: 0.2rem;
+}
+
+.comment-content {
+    color: var(--text-color);
+    line-height: 1.6;
+}

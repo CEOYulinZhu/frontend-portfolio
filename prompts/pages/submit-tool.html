@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提交AI工具 - AI提示词宝库</title>
+    <meta name="description" content="提交您发现的优秀AI工具，与更多人分享">
+
+    <!-- CSS 文件 -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../responsive/main-responsive.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/submit-tool.css">
+    <link rel="stylesheet" href="../responsive/submit-tool-responsive.css">
+    <link rel="stylesheet" href="../responsive/footer-responsive.css">
+
+    <!-- Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <!-- 加载动画 -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- 页面标题区域 -->
+        <section class="submit-header">
+            <div class="container">
+                <div class="submit-header-content">
+                    <div class="header-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <h1>提交AI工具</h1>
+                    <p>分享您发现的优秀AI工具，帮助更多人提高工作效率</p>
+                    <div class="header-tips">
+                        <div class="tip-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>简单填写</span>
+                        </div>
+                        <div class="tip-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>安全可靠</span>
+                        </div>
+                        <div class="tip-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>快速审核</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 提交表单区域 -->
+        <section class="submit-form-section">
+            <div class="container">
+                <div class="submit-form-container">
+                    <form id="submit-tool-form" class="submit-form">
+                        <!-- 基本信息 -->
+                        <div class="form-group">
+                            <h3>基本信息</h3>
+                            <div class="form-field">
+                                <label for="tool-name">工具名称 <span class="required">*</span></label>
+                                <input type="text" id="tool-name" name="name" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="tool-website">官方网站 <span class="required">*</span></label>
+                                <input type="url" id="tool-website" name="website" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="tool-category">工具分类 <span class="required">*</span></label>
+                                <select id="tool-category" name="category" required>
+                                    <option value="">请选择分类</option>
+                                    <option value="text">文本生成</option>
+                                    <option value="image">图像生成</option>
+                                    <option value="audio">音频处理</option>
+                                    <option value="video">视频创作</option>
+                                    <option value="code">代码辅助</option>
+                                    <option value="productivity">效率工具</option>
+                                    <option value="research">研究分析</option>
+                                    <option value="other">其他</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- 详细描述 -->
+                        <div class="form-group">
+                            <h3>详细描述</h3>
+                            <div class="form-field">
+                                <label for="tool-description">工具简介 <span class="required">*</span></label>
+                                <textarea id="tool-description" name="description" rows="4" required></textarea>
+                                <div class="field-tip">简要描述工具的主要功能和特点（100-200字）</div>
+                            </div>
+                            <div class="form-field">
+                                <label for="tool-features">主要功能</label>
+                                <textarea id="tool-features" name="features" rows="4"></textarea>
+                                <div class="field-tip">列出工具的核心功能点（建议3-5点）</div>
+                            </div>
+                        </div>
+
+                        <!-- 使用信息 -->
+                        <div class="form-group">
+                            <h3>使用信息</h3>
+                            <div class="form-field">
+                                <label for="tool-price">价格类型 <span class="required">*</span></label>
+                                <select id="tool-price" name="price" required>
+                                    <option value="">请选择价格类型</option>
+                                    <option value="free">完全免费</option>
+                                    <option value="freemium">免费增值</option>
+                                    <option value="paid">付费</option>
+                                    <option value="subscription">订阅制</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="tool-language">支持语言 <span class="required">*</span></label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="language" value="zh"> 中文
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="language" value="en"> 英文
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="language" value="other"> 其他
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 提交者信息 -->
+                        <div class="form-group">
+                            <h3>提交者信息（选填）</h3>
+                            <div class="form-field">
+                                <label for="submitter-name">您的名字</label>
+                                <input type="text" id="submitter-name" name="submitter_name">
+                            </div>
+                            <div class="form-field">
+                                <label for="submitter-email">联系邮箱</label>
+                                <input type="email" id="submitter-email" name="submitter_email">
+                                <div class="field-tip">仅用于必要时与您联系，不会公开显示</div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <!-- 提交指南 -->
+                    <div class="submit-guidelines">
+                        <h3>提交指南</h3>
+                        <ul>
+                            <li>请确保提交的是AI相关工具</li>
+                            <li>工具需要是可公开访问的</li>
+                            <li>请提供准确和最新的信息</li>
+                            <li>如果可能，请提供详细的功能描述</li>
+                            <li>我们会在审核后添加合适的工具</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer id="footer"></footer>
+
+    <!-- 脚本 -->
+    <script src="../js/main.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/submit-tool.js"></script>
+</body>
+
+</html>

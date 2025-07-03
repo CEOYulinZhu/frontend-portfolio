@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI工具推荐 - AI提示词宝库</title>
+    <meta name="description" content="发现最新、最实用的AI工具，提高您的工作效率和创造力">
+
+    <!-- CSS 文件 -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../responsive/main-responsive.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/page-header.css">
+    <link rel="stylesheet" href="../css/ai-tools.css">
+    <link rel="stylesheet" href="../responsive/ai-tools-responsive.css">
+    <link rel="stylesheet" href="../responsive/footer-responsive.css">
+    <link rel="stylesheet" href="../responsive/header-responsive.css">
+
+    <!-- Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <!-- 加载动画 -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <!-- 页面头部 -->
+    <header id="main-header"></header>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- 页面标题 -->
+        <div id="page-header-container"></div>
+
+        <!-- 工具分类导航 -->
+        <section class="tools-nav">
+            <div class="container">
+                <div class="tools-nav-scroll">
+                    <button class="nav-btn active" data-category="all">全部工具</button>
+                    <button class="nav-btn" data-category="text">文本生成</button>
+                    <button class="nav-btn" data-category="image">图像生成</button>
+                    <button class="nav-btn" data-category="audio">音频处理</button>
+                    <button class="nav-btn" data-category="video">视频创作</button>
+                    <button class="nav-btn" data-category="code">代码辅助</button>
+                    <button class="nav-btn" data-category="productivity">效率工具</button>
+                    <button class="nav-btn" data-category="research">研究分析</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 精选工具 -->
+        <section class="featured-tools">
+            <div class="container">
+                <h2>精选AI工具</h2>
+                <div class="featured-tools-grid" id="featured-tools-container">
+                    <!-- 精选工具卡片将在这里动态生成 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 所有工具列表 -->
+        <section class="all-tools">
+            <div class="container">
+                <div class="tools-header">
+                    <h2>所有AI工具</h2>
+                    <div class="tools-filter">
+                        <label for="sort-filter">排序方式:</label>
+                        <select id="sort-filter">
+                            <option value="popular">最受欢迎</option>
+                            <option value="newest">最新添加</option>
+                            <option value="rating">最高评分</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="tools-grid" id="tools-container">
+                    <!-- 工具卡片将在这里动态生成 -->
+                </div>
+
+                <!-- 加载更多按钮 -->
+                <div class="load-more">
+                    <button id="load-more-btn" class="btn btn-secondary">
+                        加载更多 <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 提交工具 -->
+        <section class="submit-tool">
+            <div class="container">
+                <div class="submit-tool-content">
+                    <h2>推荐AI工具</h2>
+                    <p>您知道一个很棒的AI工具吗？请告诉我们，我们会考虑将其添加到我们的列表中。</p>
+                    <a href="/prompts/pages/submit-tool.html" class="btn btn-primary" target="_blank">提交工具</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer id="footer"></footer>
+
+    <!-- 脚本 -->
+    <script src="../js/main.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/page-header.js"></script>
+    <script src="../js/ai-tools.js"></script>
+    <script>
+        // 设置页面标题和副标题
+        document.addEventListener('DOMContentLoaded', function () {
+            // 确保页面标题组件已加载
+            setTimeout(function () {
+                setPageHeader('AI工具推荐', '发现最新、最实用的AI工具，提高您的工作效率和创造力');
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>

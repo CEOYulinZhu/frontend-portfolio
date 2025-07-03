@@ -1,0 +1,178 @@
+/**
+ * AI提示词宝库 - 登录页面动画样式
+ */
+
+/* 旋转动画 */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 闪光效果动画 */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+/* 浮动动画 */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.05);
+    }
+}
+
+/* 形态变化动画 */
+@keyframes morph {
+    0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+
+    25% {
+        border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    }
+
+    50% {
+        border-radius: 30% 70% 70% 30% / 70% 30% 70% 30%;
+    }
+
+    75% {
+        border-radius: 70% 30% 30% 70% / 30% 70% 30% 70%;
+    }
+
+    100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+}
+
+/* 粒子动画 */
+@keyframes particle-animation {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(100px, 100px);
+        opacity: 0;
+    }
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 旋转加载动画 */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 脉冲动画 - 用于输入框聚焦效果 */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 5px rgba(var(--primary-rgb), 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0);
+    }
+}
+
+/* 将动画应用到元素 */
+.auth-info::after {
+    animation: rotate 30s linear infinite;
+}
+
+.brand-logo i::after {
+    animation: shimmer 3s infinite;
+}
+
+.circle-1 {
+    animation: float 15s ease-in-out infinite;
+}
+
+.circle-2 {
+    animation: float 20s ease-in-out infinite reverse;
+}
+
+.circle-3 {
+    animation: float 12s ease-in-out infinite 2s;
+}
+
+.decoration-elements::before {
+    animation: morph 15s linear infinite alternate;
+}
+
+.decoration-elements::after {
+    animation: morph 10s linear infinite alternate-reverse;
+}
+
+.particle:nth-child(1) {
+    animation: particle-animation 20s infinite linear;
+}
+
+.particle:nth-child(2) {
+    animation: particle-animation 25s infinite linear;
+}
+
+.particle:nth-child(3) {
+    animation: particle-animation 30s infinite linear;
+}
+
+.particle:nth-child(4) {
+    animation: particle-animation 22s infinite linear;
+}
+
+.particle:nth-child(5) {
+    animation: particle-animation 18s infinite linear;
+}
+
+.auth-form-container.active {
+    animation: fadeIn 0.5s ease;
+}
+
+.loader {
+    animation: spin 1s linear infinite;
+}

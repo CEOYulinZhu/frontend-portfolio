@@ -1,0 +1,31 @@
+/* 页头响应式样式 */
+
+/* 大屏幕设备响应式 */
+@media (max-width: 992px) {
+    .main-nav {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .search-container input {
+        width: 150px;
+    }
+
+    .search-container input:focus {
+        width: 200px;
+    }
+}
+
+/* 平板和手机设备响应式 */
+@media (max-width: 768px) {
+    .search-container {
+        display: none;
+    }
+}

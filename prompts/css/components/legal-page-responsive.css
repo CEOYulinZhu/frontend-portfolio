@@ -1,0 +1,113 @@
+/* 法律页面响应式样式组件 */
+
+/* 大屏幕设备 (1200px以下) */
+@media (max-width: 1200px) {
+    .legal-content {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* 中等屏幕设备 (992px以下) */
+@media (max-width: 992px) {
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .page-header .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .legal-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .legal-section h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* 平板设备 (768px以下) */
+@media (max-width: 768px) {
+    .legal-content {
+        padding: var(--spacing-md);
+        margin: var(--spacing-lg) 0;
+    }
+
+    .page-header {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .page-header .subtitle {
+        font-size: 1rem;
+    }
+
+    .legal-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .legal-section h3 {
+        font-size: 1.05rem;
+    }
+
+    .contact-info {
+        padding: var(--spacing-md);
+    }
+}
+
+/* 手机设备 (576px以下) */
+@media (max-width: 576px) {
+    .legal-content {
+        padding: var(--spacing-md) var(--spacing-sm);
+        margin: var(--spacing-md) 0;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .page-header {
+        padding: var(--spacing-md) 0;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .page-header .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .legal-section {
+        margin-bottom: var(--spacing-lg);
+        padding-bottom: var(--spacing-md);
+    }
+
+    .legal-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .legal-section h3 {
+        font-size: 1rem;
+    }
+
+    .legal-section p,
+    .legal-section li {
+        font-size: 0.95rem;
+    }
+
+    .contact-info {
+        padding: var(--spacing-sm);
+    }
+
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+
+    .legal-updated {
+        margin-top: var(--spacing-lg);
+        padding-top: var(--spacing-sm);
+        font-size: 0.85rem;
+    }
+}

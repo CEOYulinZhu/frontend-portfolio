@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录 - AI提示词宝库</title>
+    <meta name="description" content="登录AI提示词宝库，访问您的收藏提示词和个性化设置。">
+
+    <!-- CSS 文件 -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <!-- 动画和响应式样式已在login.css中通过@import引入 -->
+
+    <!-- Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 添加Google字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- 加载动画 -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <main>
+        <div class="auth-wrapper">
+            <div class="auth-container">
+                <!-- 左侧信息面板 -->
+                <div class="auth-info">
+                    <div class="auth-info-content">
+                        <div class="brand-logo">
+                            <i class="fas fa-robot"></i>
+                            <h1>AI提示词宝库</h1>
+                        </div>
+                        <div class="slogan">
+                            <h2>智能提示词，激发创造力</h2>
+                            <p>发现、创建和分享高效的AI提示词</p>
+                        </div>
+
+                        <div class="auth-features">
+                            <div class="auth-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-bookmark"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>收藏提示词</h3>
+                                    <p>保存您喜欢的提示词，随时使用</p>
+                                </div>
+                            </div>
+
+                            <div class="auth-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-history"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>使用历史</h3>
+                                    <p>查看和管理您的提示词使用记录</p>
+                                </div>
+                            </div>
+
+                            <div class="auth-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-share-alt"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>分享创作</h3>
+                                    <p>与社区分享您创建的优质提示词</p>
+                                </div>
+                            </div>
+
+                            <div class="auth-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>个性化设置</h3>
+                                    <p>自定义您的偏好和隐私选项</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="decoration-elements">
+                            <div class="decoration-circle circle-1"></div>
+                            <div class="decoration-circle circle-2"></div>
+                            <div class="decoration-circle circle-3"></div>
+                            <!-- 添加粒子元素 -->
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右侧表单卡片 -->
+                <div class="auth-card">
+                    <div class="card-header">
+                        <div class="auth-tabs">
+                            <button class="auth-tab active" data-tab="login">登录</button>
+                            <button class="auth-tab" data-tab="register">注册</button>
+                        </div>
+                    </div>
+
+                    <!-- 登录表单 -->
+                    <div class="auth-form-container active" id="login-form-container">
+                        <h2>欢迎回来</h2>
+                        <p class="auth-subtitle">登录您的AI提示词宝库账号</p>
+
+                        <form id="login-form" class="auth-form">
+                            <div class="form-group">
+                                <label for="login-email">电子邮箱</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="login-email" name="email" placeholder="请输入您的电子邮箱" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="login-password">密码</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="login-password" name="password" placeholder="请输入您的密码"
+                                        required>
+                                    <span class="toggle-password" tabindex="-1" aria-hidden="true">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-options">
+                                <div class="remember-me">
+                                    <input type="checkbox" id="remember-me" name="remember">
+                                    <label for="remember-me">记住我</label>
+                                </div>
+                                <a href="#" class="forgot-password">忘记密码？</a>
+                            </div>
+
+                            <button type="submit" class="auth-button">
+                                <span>登录</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </form>
+
+                        <div class="social-login">
+                            <div class="divider">
+                                <span>或通过以下方式登录</span>
+                            </div>
+                            <div class="social-buttons">
+                                <button class="social-button wechat" title="使用微信登录">
+                                    <i class="fab fa-weixin"></i>
+                                </button>
+                                <button class="social-button qq" title="使用QQ登录">
+                                    <i class="fab fa-qq"></i>
+                                </button>
+                                <button class="social-button weibo" title="使用微博登录">
+                                    <i class="fab fa-weibo"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 注册表单 -->
+                    <div class="auth-form-container" id="register-form-container">
+                        <h2>创建账号</h2>
+                        <p class="auth-subtitle">注册AI提示词宝库，探索更多功能</p>
+
+                        <form id="register-form" class="auth-form">
+                            <div class="form-group">
+                                <label for="register-username">用户名</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="register-username" name="username" placeholder="请输入用户名"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-email">电子邮箱</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="register-email" name="email" placeholder="请输入电子邮箱" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-password">密码</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="register-password" name="password"
+                                        placeholder="请设置密码（至少8位）" required minlength="8">
+                                    <span class="toggle-password" tabindex="-1" aria-hidden="true">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </div>
+                                <div class="password-strength">
+                                    <div class="strength-bar">
+                                        <div class="strength-level" data-level="0"></div>
+                                    </div>
+                                    <span class="strength-text">密码强度: 弱</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-confirm-password">确认密码</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="register-confirm-password" name="confirm-password"
+                                        placeholder="请再次输入密码" required minlength="8">
+                                    <span class="toggle-password" tabindex="-1" aria-hidden="true">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-options">
+                                <div class="agree-terms">
+                                    <input type="checkbox" id="agree-terms" name="agree-terms" required>
+                                    <label for="agree-terms">我已阅读并同意<a href="terms.html" target="_blank">服务条款</a>和<a
+                                            href="privacy.html" target="_blank">隐私政策</a></label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="auth-button">
+                                <span>注册</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </form>
+
+                        <div class="social-login">
+                            <div class="divider">
+                                <span>或通过以下方式注册</span>
+                            </div>
+                            <div class="social-buttons">
+                                <button class="social-button wechat" title="使用微信注册">
+                                    <i class="fab fa-weixin"></i>
+                                </button>
+                                <button class="social-button qq" title="使用QQ注册">
+                                    <i class="fab fa-qq"></i>
+                                </button>
+                                <button class="social-button weibo" title="使用微博注册">
+                                    <i class="fab fa-weibo"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript 文件 -->
+    <script src="../js/login.js"></script>
+</body>
+
+</html>

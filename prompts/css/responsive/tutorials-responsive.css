@@ -1,0 +1,125 @@
+/**
+ * AI提示词宝库 - 教程页面响应式样式
+ */
+
+/* 大型桌面设备 (1200px 以上) */
+@media (min-width: 1200px) {
+    .tutorials-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* 中型桌面设备 (992px-1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .tutorials-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* 平板设备 (768px-991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .tutorials-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .tutorial-image {
+        height: 180px;
+    }
+
+    .tutorial-icon-placeholder i {
+        font-size: 3.5rem;
+    }
+
+    .tutorial-title-overlay {
+        font-size: 1.3rem;
+    }
+
+    .category-nav {
+        gap: 0.7rem;
+    }
+
+    .category-btn {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* 移动设备 (576px-767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .tutorials-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .tutorial-image {
+        height: 160px;
+    }
+
+    .tutorial-icon-placeholder i {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .tutorial-title-overlay {
+        font-size: 1.1rem;
+    }
+
+    .category-nav {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0.5rem 0;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .category-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .tutorial-content h3 {
+        font-size: 1.15rem;
+    }
+
+    .tutorial-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* 小型移动设备 (575px 以下) */
+@media (max-width: 575px) {
+    .tutorials-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .tutorial-image {
+        height: 180px;
+    }
+
+    .tutorial-icon-placeholder i {
+        font-size: 3.5rem;
+    }
+
+    .category-nav {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0.5rem 0;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .category-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .load-more .btn {
+        padding: 0.8rem 2rem;
+    }
+}

@@ -1,0 +1,446 @@
+/* 教程详情页面响应式样式 */
+
+/* 全局容器设置 */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    /* 防止水平滚动 */
+}
+
+/* 全局内容控制 */
+img,
+video,
+iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+pre,
+code {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* 大屏幕设备默认样式 (992px以上) */
+.tutorial-header {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.tutorial-header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.breadcrumb {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tutorial-meta {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.tutorial-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+}
+
+.tutorial-sidebar {
+    position: sticky;
+    top: 2rem;
+}
+
+.tutorial-main {
+    max-width: 100%;
+}
+
+.tutorial-main img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.tutorial-main pre {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 1.5rem;
+    background: var(--code-bg);
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.tutorial-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
+    gap: 2rem;
+}
+
+.related-tutorials {
+    background: var(--light-bg);
+    padding: 4rem 0;
+}
+
+.related-tutorials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* 平板设备 (992px及以下) */
+@media screen and (max-width: 992px) {
+    .tutorial-header {
+        padding: 3rem 0;
+    }
+
+    .tutorial-header h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    .tutorial-meta {
+        gap: 1.5rem;
+    }
+
+    .tutorial-layout {
+        grid-template-columns: 200px 1fr;
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+
+    .tutorial-main h2 {
+        font-size: 1.8rem;
+    }
+
+    .tutorial-main h3 {
+        font-size: 1.5rem;
+    }
+
+    .related-tutorials {
+        padding: 3rem 0;
+    }
+
+    .related-tutorials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* 手机设备 (768px及以下) */
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        /* 防止页面整体产生滚动 */
+    }
+
+    .container {
+        padding: 0 0.8rem;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .tutorial-header {
+        padding: 2rem 0;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .tutorial-header-content {
+        width: 100%;
+        padding: 0 0.8rem;
+        box-sizing: border-box;
+    }
+
+    .tutorial-header h1 {
+        font-size: 1.6rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+        word-wrap: break-word;
+    }
+
+    .breadcrumb {
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+    }
+
+    .tutorial-meta {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .tutorial-meta span {
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    .tutorial-layout {
+        grid-template-columns: 1fr;
+        padding: 1rem 0;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .tutorial-sidebar {
+        position: relative;
+        top: 0;
+        width: 100%;
+        margin: 0 0 1.5rem 0;
+        background: var(--light-bg);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .tutorial-toc {
+        width: 100%;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    .tutorial-toc h3 {
+        padding: 0.8rem;
+        margin: 0;
+        font-size: 1.1rem;
+        background: rgba(0, 0, 0, 0.05);
+    }
+
+    .tutorial-toc ul {
+        display: flex;
+        overflow-x: auto;
+        padding: 0.8rem;
+        margin: 0;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        gap: 0.8rem;
+        width: 100%;
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+    .tutorial-toc li {
+        flex: 0 0 auto;
+        margin: 0;
+    }
+
+    .tutorial-toc a {
+        white-space: nowrap;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 16px;
+        display: block;
+        color: var(--text-color);
+        text-decoration: none;
+    }
+
+    .tutorial-main {
+        width: 100%;
+        overflow-x: hidden;
+        padding: 0;
+    }
+
+    .tutorial-main h2 {
+        font-size: 1.4rem;
+        margin: 1.5rem 0 1rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+    }
+
+    .tutorial-main h3 {
+        font-size: 1.2rem;
+        margin: 1.2rem 0 0.8rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+    }
+
+    .tutorial-main p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        word-wrap: break-word;
+    }
+
+    .tutorial-main img {
+        width: 100%;
+        height: auto;
+        margin: 1.2rem 0;
+        border-radius: 6px;
+    }
+
+    .tutorial-main pre {
+        width: calc(100% + 1.6rem);
+        margin: 1rem -0.8rem;
+        padding: 0.8rem;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        background: var(--code-bg);
+        border-radius: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tutorial-main code {
+        font-size: 0.85rem;
+        padding: 0.2rem 0.4rem;
+        background: var(--code-bg);
+        border-radius: 4px;
+        word-wrap: break-word;
+    }
+
+    .tutorial-navigation {
+        flex-direction: column;
+        margin: 1.5rem 0;
+        gap: 0.8rem;
+        width: 100%;
+    }
+
+    .nav-prev,
+    .nav-next {
+        width: 100%;
+        padding: 0.8rem;
+        background: var(--light-bg);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: var(--text-color);
+    }
+
+    .nav-prev span,
+    .nav-next span {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        flex: 1;
+    }
+
+    .related-tutorials {
+        padding: 1.5rem 0;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .related-tutorials h2 {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-bottom: 1.2rem;
+    }
+
+    .related-tutorials-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 100%;
+        padding: 0 0.8rem;
+        box-sizing: border-box;
+    }
+}
+
+/* 小型手机设备 (375px及以下) */
+@media screen and (max-width: 375px) {
+    .container {
+        padding: 0 0.6rem;
+    }
+
+    .tutorial-header-content {
+        padding: 0 0.6rem;
+    }
+
+    .tutorial-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .breadcrumb {
+        font-size: 0.8rem;
+    }
+
+    .tutorial-meta span {
+        font-size: 0.8rem;
+    }
+
+    .tutorial-toc h3 {
+        padding: 0.6rem;
+        font-size: 1rem;
+    }
+
+    .tutorial-toc ul {
+        padding: 0.6rem;
+        gap: 0.6rem;
+    }
+
+    .tutorial-toc a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    .tutorial-main h2 {
+        font-size: 1.3rem;
+    }
+
+    .tutorial-main h3 {
+        font-size: 1.1rem;
+    }
+
+    .tutorial-main p {
+        font-size: 0.9rem;
+    }
+
+    .tutorial-main pre {
+        width: calc(100% + 1.2rem);
+        margin: 1rem -0.6rem;
+        padding: 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .tutorial-main code {
+        font-size: 0.8rem;
+        padding: 0.15rem 0.3rem;
+    }
+
+    .nav-prev,
+    .nav-next {
+        padding: 0.6rem;
+    }
+
+    .nav-prev span,
+    .nav-next span {
+        font-size: 0.85rem;
+    }
+
+    .related-tutorials {
+        padding: 1.2rem 0;
+    }
+
+    .related-tutorials h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .related-tutorials-grid {
+        padding: 0 0.6rem;
+        gap: 0.8rem;
+    }
+}

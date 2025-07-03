@@ -1,0 +1,115 @@
+/* 教程页面响应式样式 */
+
+/* 大屏幕设备 (1200px 及以上) */
+@media (min-width: 1200px) {
+    .tutorials-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 中等屏幕设备 (992px 到 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .tutorials-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 平板设备 (768px 到 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .tutorials-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .tutorial-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* 手机设备 (767px 及以下) */
+@media (max-width: 767px) {
+    .tutorial-categories {
+        top: 70px;
+        padding: 0.8rem 0;
+        transition: all 0.3s ease;
+    }
+
+    .category-nav {
+        padding: 0 1rem;
+        gap: 0.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        justify-content: flex-start;
+    }
+
+    .category-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .category-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+        /* 防止按钮被压缩 */
+    }
+
+    .tutorials-grid {
+        padding: 1.5rem 0 2rem;
+        margin-top: 0.8rem;
+    }
+
+    .tutorials-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .tutorial-card {
+        max-width: 100%;
+    }
+
+    .tutorial-image {
+        height: 180px;
+    }
+
+    .tutorial-content {
+        padding: 1rem;
+    }
+
+    .tutorial-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .tutorial-content p {
+        font-size: 0.9rem;
+    }
+
+    .tutorial-meta {
+        font-size: 0.8rem;
+    }
+
+    .load-more {
+        margin-top: 1.5rem;
+    }
+
+    .load-more .btn {
+        width: calc(100% - 2rem);
+        margin: 0 1rem;
+    }
+}
+
+/* 小型手机设备 (375px 及以下) */
+@media (max-width: 375px) {
+    .category-btn {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .tutorial-image {
+        height: 160px;
+    }
+}

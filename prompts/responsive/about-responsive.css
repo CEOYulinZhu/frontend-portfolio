@@ -1,0 +1,128 @@
+/* 关于我们页面响应式样式 */
+
+/* 内容区块响应式 */
+@media (max-width: 992px) {
+    .section-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .section-content.reverse {
+        flex-direction: column;
+    }
+
+    .section-image {
+        min-width: 100%;
+    }
+
+    .image-placeholder {
+        height: 250px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+/* 平板和小屏幕响应式 */
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0;
+    }
+
+    .section-text h2,
+    .values-section h2,
+    .team-section h2,
+    .join-content h2,
+    .contact-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .values-grid,
+    .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .image-placeholder {
+        height: 200px;
+    }
+
+    .image-placeholder i {
+        font-size: 3rem;
+    }
+
+    .placeholder-text {
+        font-size: 1.5rem;
+    }
+
+    .avatar-placeholder i {
+        font-size: 3rem;
+    }
+
+    .avatar-text {
+        font-size: 1.1rem;
+    }
+
+    .join-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contact-cta {
+        padding: 3rem 1rem;
+        margin-top: 2rem;
+    }
+
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-content .btn {
+        padding: 0.7rem 1.8rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+/* 手机屏幕响应式 */
+@media (max-width: 576px) {
+
+    .values-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-placeholder {
+        height: 180px;
+    }
+
+    .image-placeholder i {
+        font-size: 2.5rem;
+    }
+
+    .placeholder-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-cta {
+        padding: 2.5rem 1rem;
+    }
+
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-content p {
+        font-size: 0.95rem;
+    }
+}

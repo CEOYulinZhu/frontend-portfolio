@@ -1,0 +1,114 @@
+/**
+ * AI提示词宝库 - AI工具页面响应式样式
+ */
+
+/* 大型桌面设备 (1200px 以上) */
+@media (min-width: 1200px) {
+    .tools-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 桌面设备 (992px-1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .featured-tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 平板设备 (768px-991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .featured-tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .tools-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tools-filter {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+    }
+}
+
+/* 移动设备 (767px 以下) */
+@media (max-width: 767px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .featured-tools-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .tools-nav-scroll {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 0.5rem 0;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .tools-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .tools-filter {
+        position: static;
+        transform: none;
+    }
+
+    .submit-tool-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .submit-tool-content p {
+        font-size: 1rem;
+    }
+}
+
+/* 超小屏幕设备 (375px 以下) */
+@media (max-width: 375px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tool-card {
+        padding: 0.8rem 1rem;
+    }
+
+    .tool-card-header h3 {
+        font-size: 1rem;
+    }
+
+    .tool-card p {
+        font-size: 0.85rem;
+        -webkit-line-clamp: 3;
+    }
+}

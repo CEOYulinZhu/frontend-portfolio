@@ -1,0 +1,413 @@
+/* 教程详情页面样式 */
+
+/* 教程头部 */
+.tutorial-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 3rem 0;
+}
+
+.tutorial-header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 面包屑导航 */
+.breadcrumb {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+.breadcrumb a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb i {
+    margin: 0 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* 教程标题 */
+.tutorial-header h1 {
+    font-size: 2.5rem;
+    margin: 0 0 1rem;
+    color: #2c3e50;
+    line-height: 1.3;
+}
+
+/* 教程元信息 */
+.tutorial-meta {
+    display: flex;
+    gap: 2rem;
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+.tutorial-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tutorial-meta i {
+    color: #0056b3;
+}
+
+/* 教程内容布局 */
+.tutorial-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* 左侧目录 */
+.tutorial-sidebar {
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+}
+
+.tutorial-toc {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+}
+
+.tutorial-toc h3 {
+    font-size: 1.2rem;
+    margin: 0 0 1rem;
+    color: #2c3e50;
+}
+
+.tutorial-toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tutorial-toc li {
+    margin: 0.8rem 0;
+}
+
+.tutorial-toc a {
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.tutorial-toc li.active a {
+    background: #e9ecef;
+    color: #0056b3;
+    font-weight: 500;
+}
+
+.tutorial-toc a:hover {
+    background: #f8f9fa;
+    color: #0056b3;
+}
+
+/* 右侧内容区 */
+.tutorial-main {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+}
+
+/* 教程内容样式 */
+.tutorial-main h2 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    color: #2c3e50;
+}
+
+.tutorial-main h3 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 1rem;
+    color: #2c3e50;
+}
+
+.tutorial-main p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin: 1rem 0;
+}
+
+.tutorial-main ul,
+.tutorial-main ol {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.tutorial-main li {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+/* 代码块样式 */
+.tutorial-main pre {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.tutorial-main code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    color: #e83e8c;
+}
+
+/* 教程导航 */
+.tutorial-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.nav-prev,
+.nav-next {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: #4a5568;
+    max-width: 45%;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    color: #0056b3;
+}
+
+.nav-prev span,
+.nav-next span {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* 相关教程 */
+.related-tutorials {
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+    padding: 4rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.related-tutorials h2 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: #2c3e50;
+    position: relative;
+}
+
+.related-tutorials h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #1a73e8, #1557b0);
+    margin: 1rem auto 0;
+    border-radius: 3px;
+}
+
+.related-tutorials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.tutorial-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tutorial-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.tutorial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* 图标占位区样式 */
+.tutorial-icon-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, rgba(26, 115, 232, 0.8), rgba(33, 150, 243, 0.8));
+    z-index: 1;
+}
+
+.tutorial-icon-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.tutorial-title-overlay {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 1rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+}
+
+.tutorial-card:hover .tutorial-icon-placeholder {
+    transform: scale(1.05);
+}
+
+.tutorial-card:hover .tutorial-image img {
+    transform: scale(1.1);
+}
+
+.tutorial-card:hover .tutorial-icon-placeholder i {
+    transform: scale(1.1);
+}
+
+.difficulty {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+}
+
+.difficulty.beginner {
+    background: linear-gradient(135deg, #4caf50, #45a049);
+}
+
+.difficulty.intermediate {
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+}
+
+.difficulty.advanced {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+}
+
+.tutorial-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: #fff;
+}
+
+.tutorial-content h3 {
+    margin: 0 0 0.8rem;
+    font-size: 1.25rem;
+    color: #2c3e50;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.tutorial-content p {
+    margin: 0 0 1.2rem;
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.tutorial-meta {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+    color: #64748b;
+    font-size: 0.875rem;
+    margin-top: auto;
+}
+
+.tutorial-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tutorial-meta i {
+    color: #1a73e8;
+}
+
+.tutorial-content .btn {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem;
+    border: 2px solid #1a73e8;
+    border-radius: 8px;
+    color: #1a73e8;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    background: transparent;
+}
+
+.tutorial-content .btn:hover {
+    background: #1a73e8;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.2);
+}
+
+/* 图片样式 */
+.tutorial-main img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}

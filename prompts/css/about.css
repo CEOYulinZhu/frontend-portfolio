@@ -1,0 +1,475 @@
+/**
+ * AI提示词宝库 - 关于我们页面样式
+ */
+
+/* 通用部分样式 */
+section {
+    padding: 5rem 0;
+}
+
+/* 内容区块样式 */
+.section-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.section-content.reverse {
+    flex-direction: row-reverse;
+}
+
+.section-text {
+    flex: 1;
+}
+
+.section-text h2 {
+    margin-top: 0;
+    font-size: 2.2rem;
+    color: var(--gray-900);
+    margin-bottom: 1.5rem;
+}
+
+.section-text .lead {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.section-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    color: var(--gray-700);
+}
+
+.section-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.section-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 图片占位符样式 */
+.image-placeholder {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-placeholder {
+    background: linear-gradient(135deg, #1a73e8, #1557b0);
+}
+
+.story-placeholder {
+    background: linear-gradient(135deg, #4285f4, #34a853);
+}
+
+.image-placeholder i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+    transition: transform 0.3s ease;
+}
+
+.placeholder-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 0 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 悬停效果 */
+.section-image:hover .image-placeholder i {
+    transform: scale(1.1);
+}
+
+/* 头像占位符样式 */
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.team-member:nth-child(1) .avatar-placeholder {
+    background: linear-gradient(135deg, #1a73e8, #1557b0);
+}
+
+.team-member:nth-child(2) .avatar-placeholder {
+    background: linear-gradient(135deg, #ea4335, #fbbc05);
+}
+
+.team-member:nth-child(3) .avatar-placeholder {
+    background: linear-gradient(135deg, #34a853, #4285f4);
+}
+
+.team-member:nth-child(4) .avatar-placeholder {
+    background: linear-gradient(135deg, #fbbc05, #ea4335);
+}
+
+.avatar-placeholder i {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+    transition: transform 0.3s ease;
+}
+
+.avatar-text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.team-member:hover .avatar-placeholder i {
+    transform: scale(1.1);
+}
+
+/* 使命部分样式 */
+.mission-section {
+    background-color: white;
+}
+
+/* 故事部分样式 */
+.story-section {
+    background-color: var(--gray-50);
+}
+
+/* 核心价值观部分样式 */
+.values-section {
+    background-color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.values-section h2 {
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    color: var(--gray-900);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    background-color: var(--gray-50);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 1.5rem;
+}
+
+.value-card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+    color: var(--gray-900);
+}
+
+.value-card p {
+    margin: 0;
+    color: var(--gray-700);
+    line-height: 1.6;
+}
+
+/* 团队部分样式 */
+.team-section {
+    background-color: var(--gray-50);
+}
+
+.team-section h2 {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    color: var(--gray-900);
+}
+
+.team-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    color: var(--gray-700);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2.5rem;
+}
+
+.team-member {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.member-avatar {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.member-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.team-member:hover .member-avatar img {
+    transform: scale(1.05);
+}
+
+.team-member h3 {
+    margin: 1.5rem 0 0.3rem;
+    font-size: 1.3rem;
+    color: var(--gray-900);
+    text-align: center;
+}
+
+.member-title {
+    margin: 0 0 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    text-align: center;
+}
+
+.member-bio {
+    padding: 0 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--gray-700);
+    text-align: center;
+    line-height: 1.6;
+}
+
+.member-social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+}
+
+.member-social a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--gray-100);
+    color: var(--gray-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.member-social a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* 加入我们部分样式 */
+.join-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.join-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.join-content h2 {
+    margin-top: 0;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.join-content p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.join-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 联系我们部分样式 */
+.contact-section {
+    background-color: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info h2 {
+    margin-top: 0;
+    font-size: 2.2rem;
+    color: var(--gray-900);
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 2rem;
+    color: var(--gray-700);
+    line-height: 1.7;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    color: var(--gray-700);
+}
+
+.contact-list li i {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.contact-social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--gray-100);
+    color: var(--gray-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-social-links a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* 修改按钮样式，避免与页脚冲突 */
+.contact-form .btn-primary,
+.join-buttons .btn-primary {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.contact-form .btn-primary:hover,
+.join-buttons .btn-primary:hover {
+    background-color: var(--gray-100);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 联系入口区域 */
+.contact-cta {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.cta-content .btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.cta-content .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

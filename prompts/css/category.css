@@ -1,0 +1,521 @@
+/**
+ * AI提示词宝库 - 分类详情页面样式
+ */
+
+/* 分类头部样式 */
+.category-header {
+    background: linear-gradient(135deg, #1a73e8, #1557b0);
+    color: #fff;
+    padding: 4rem 0 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%);
+    background-size: 20px 20px;
+    opacity: 0.1;
+}
+
+.category-header .container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.category-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.category-icon:hover {
+    transform: scale(1.05);
+}
+
+.category-info {
+    flex-grow: 1;
+}
+
+.category-info h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: #fff;
+}
+
+.category-info p {
+    font-size: 1.1rem;
+    margin: 0;
+    opacity: 0.9;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.category-stats {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
+}
+
+.stat {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    min-width: 120px;
+}
+
+.stat span:first-child {
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.stat span:last-child {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* 筛选区域样式 */
+.filter-section {
+    background-color: var(--light-color);
+    padding: var(--spacing-md) 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+    transition: background-color var(--transition-normal);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: 0.5rem;
+}
+
+.filter-dropdown {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-dropdown label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: var(--gray-700);
+}
+
+.filter-dropdown .filter-select {
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--gray-300);
+    background-color: white;
+    color: var(--gray-800);
+    font-size: 1rem;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2364748b'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5rem;
+    cursor: pointer;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.filter-dropdown .filter-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.2);
+    outline: none;
+}
+
+.search-container {
+    flex: 2 1 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-container label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+    color: var(--gray-700);
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+}
+
+.search-input-wrapper input {
+    flex: 1;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 20px;
+    background-color: var(--gray-100);
+    font-size: 1rem;
+    transition: background-color var(--transition-normal), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.search-input-wrapper input:focus {
+    background-color: var(--light-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.2);
+    outline: none;
+}
+
+.search-input-wrapper button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--gray-500);
+    cursor: pointer;
+    padding: 0;
+}
+
+.search-input-wrapper button:hover {
+    color: var(--primary-color);
+}
+
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.filter-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    background-color: var(--primary-color-light);
+    color: var(--primary-color-dark);
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.filter-tag button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.filter-tag button:hover {
+    color: var(--primary-color);
+}
+
+/* 提示词列表样式 */
+.prompts-section {
+    padding: 3rem 0;
+}
+
+.prompts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.prompts-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+#filtered-count {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+}
+
+.prompts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.prompt-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.prompt-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.prompt-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--gray-900);
+}
+
+.prompt-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--yellow-500);
+    font-weight: bold;
+}
+
+.prompt-description {
+    color: var(--gray-700);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.prompt-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tag {
+    padding: 0.3rem 0.8rem;
+    background-color: var(--gray-100);
+    color: var(--gray-700);
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.prompt-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.prompt-uses {
+    color: var(--gray-600);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.prompt-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: color 0.2s;
+}
+
+.prompt-link:hover {
+    color: var(--primary-color-dark);
+}
+
+/* 分页样式 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.page-btn {
+    background-color: white;
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.page-btn:hover:not(:disabled) {
+    background-color: var(--gray-100);
+    border-color: var(--gray-400);
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-numbers {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.page-number {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 1px solid var(--gray-300);
+    background-color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.page-number:hover:not(.active) {
+    background-color: var(--gray-100);
+    border-color: var(--gray-400);
+}
+
+.page-number.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.page-ellipsis {
+    color: var(--gray-600);
+}
+
+/* 相关分类样式 */
+.related-categories {
+    padding: 3rem 0;
+    background-color: var(--gray-50);
+}
+
+.related-categories h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.related-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.related-category-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.related-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.related-category-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.related-category-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--gray-900);
+    font-size: 1.1rem;
+}
+
+.related-category-card span {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+}
+
+.prompt-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.prompt-subcategory {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.4rem 0.8rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    box-shadow: 0 2px 4px rgba(var(--primary-rgb), 0.2);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.prompt-meta {
+    display: flex;
+    gap: 1.2rem;
+    color: var(--gray-600);
+    font-size: 0.85rem;
+    align-items: center;
+}
+
+.prompt-date {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}

@@ -1,0 +1,100 @@
+/**
+ * AI提示词宝库 - 登录页面响应式样式
+ */
+
+/* 大屏幕平板设备 */
+@media (max-width: 992px) {
+    .auth-features {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-feature:nth-child(odd),
+    .auth-feature:nth-child(even) {
+        transform: translateY(0);
+    }
+
+    .auth-container {
+        flex-direction: column;
+        max-width: 550px;
+    }
+
+    .auth-info {
+        padding: 1.8rem;
+        min-width: auto;
+    }
+
+    .auth-card {
+        padding: 1.8rem;
+    }
+}
+
+/* 中等屏幕设备 */
+@media (max-width: 768px) {
+    .auth-wrapper {
+        padding: 0.8rem;
+    }
+
+    .auth-container {
+        border-radius: 12px;
+    }
+
+    .auth-info {
+        padding: 1.2rem;
+    }
+
+    .brand-logo i {
+        font-size: 1.8rem;
+        width: 45px;
+        height: 45px;
+    }
+
+    .brand-logo h1 {
+        font-size: 1.6rem;
+    }
+
+    .slogan h2 {
+        font-size: 1.3rem;
+    }
+
+    .auth-features {
+        gap: 0.8rem;
+    }
+
+    .auth-feature {
+        padding: 0.8rem;
+    }
+
+    .auth-card {
+        padding: 1.2rem;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+}
+
+/* 小屏幕设备 */
+@media (max-width: 576px) {
+    .auth-info {
+        padding: 1rem;
+    }
+
+    .auth-card {
+        padding: 1rem;
+    }
+
+    .auth-tab {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+
+    .auth-form-container h2 {
+        font-size: 1.4rem;
+    }
+
+    .social-buttons {
+        flex-wrap: wrap;
+    }
+}
