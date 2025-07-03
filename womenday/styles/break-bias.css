@@ -1,0 +1,151 @@
+.break-bias-section {
+    background-color: #fff8fa;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.break-bias-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, var(--background-color), transparent);
+    z-index: 1;
+}
+
+.bias-cards-container {
+    max-width: 1400px;
+    margin: 3rem auto 0;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.bias-card {
+    perspective: 1000px;
+    height: 200px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.bias-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bias-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.bias-card.flipped .bias-card-inner {
+    transform: rotateY(180deg);
+}
+
+.bias-card-front,
+.bias-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    background: white;
+}
+
+.bias-card-front {
+    background: linear-gradient(135deg, #fff5f8, #fff);
+    border: 2px solid rgba(255, 105, 180, 0.1);
+}
+
+.bias-card-back {
+    background: var(--gradient);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.bias-stereotype {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.bias-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.bias-fact {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.bias-data {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+/* 动画效果 */
+@keyframes floatAnimation {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.bias-card:hover {
+    animation: floatAnimation 2s ease-in-out infinite;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .bias-cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+        padding: 0 1.5rem;
+    }
+
+    .bias-card {
+        height: 180px;
+    }
+
+    .bias-stereotype,
+    .bias-fact {
+        font-size: 1rem;
+    }
+
+    .bias-data {
+        font-size: 1.5rem;
+    }
+
+    .bias-icon {
+        font-size: 1.5rem;
+    }
+}

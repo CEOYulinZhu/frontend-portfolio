@@ -1,0 +1,238 @@
+.her-hours-section {
+    background-color: #fff8fa;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.her-hours-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at top right, rgba(255, 105, 180, 0.1), transparent 60%),
+        radial-gradient(circle at bottom left, rgba(240, 98, 146, 0.1), transparent 60%);
+    z-index: 1;
+}
+
+.time-wheel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    z-index: 2;
+}
+
+.time-wheel {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wheel-center {
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow:
+        0 0 30px rgba(0, 0, 0, 0.2),
+        inset 0 0 15px rgba(255, 105, 180, 0.2);
+}
+
+.digital-clock {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.digital-clock .time {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ff69b4;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+.digital-clock .seconds {
+    font-size: 1.8rem;
+    color: #ff69b4;
+    opacity: 0.7;
+}
+
+.current-zone {
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+    opacity: 0.8;
+}
+
+#timeWheel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.time-detail {
+    flex: 1;
+    min-width: 300px;
+}
+
+.detail-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.detail-time {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.detail-location {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-story {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .time-wheel-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .time-wheel {
+        width: 280px;
+        height: 280px;
+    }
+
+    .time-detail {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .time-wheel {
+        width: 240px;
+        height: 240px;
+    }
+
+    .digital-clock .time {
+        font-size: 2.8rem;
+    }
+
+    .digital-clock .seconds {
+        font-size: 1.5rem;
+    }
+
+    .current-zone {
+        font-size: 1rem;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detail-card {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.time-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.control-btn {
+    background: none;
+    border: 2px solid #ff69b4;
+    color: #ff69b4;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background: #ff69b4;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+}
+
+.control-btn.active {
+    background: #ff69b4;
+    color: #fff;
+}
+
+.control-btn i {
+    font-size: 1rem;
+}
+
+.control-btn#togglePlay i {
+    margin-left: 2px;
+}
+
+@media (max-width: 768px) {
+    .time-controls {
+        margin-top: 1rem;
+    }
+
+    .control-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .control-btn i {
+        font-size: 0.9rem;
+    }
+}

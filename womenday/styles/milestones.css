@@ -1,0 +1,333 @@
+.milestones-section {
+    background-color: #fff;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.milestones-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, var(--background-color), transparent);
+    z-index: 1;
+}
+
+.milestones-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.milestones-scroll {
+    width: 100%;
+    overflow-x: auto;
+    padding: 4rem 2rem;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+}
+
+.milestones-scroll::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.milestones-track {
+    display: flex;
+    min-width: max-content;
+    gap: 3rem;
+    padding: 1rem 5%;
+    position: relative;
+}
+
+.milestones-track::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 4px;
+    background: var(--gradient);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.milestone-item {
+    position: relative;
+    width: 300px;
+    padding-top: 2rem;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.milestone-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.milestone-dot {
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.milestone-dot::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: pulse 2s infinite;
+}
+
+.milestone-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transform-origin: top center;
+    transform: perspective(1000px) rotateX(-10deg);
+    transition: all 0.3s ease;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.milestone-item:hover .milestone-dot {
+    transform: translate(-50%, -50%) scale(1.5);
+    background: var(--secondary-color);
+}
+
+.milestone-item:hover .milestone-card {
+    transform: perspective(1000px) rotateX(0);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+}
+
+.milestone-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient);
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    box-shadow: 0 10px 20px rgba(240, 98, 146, 0.2);
+    transition: all 0.3s ease;
+}
+
+.milestone-item:hover .milestone-icon {
+    transform: scale(1.1) rotate(360deg);
+    box-shadow: 0 15px 30px rgba(240, 98, 146, 0.3);
+}
+
+.milestone-year {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.milestone-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
+}
+
+
+
+.milestones-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.milestone-nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    pointer-events: auto;
+    transition: all 0.3s ease;
+}
+
+.milestone-nav-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    70% {
+        transform: scale(2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .milestones-section {
+        padding: 4rem 0;
+    }
+
+    .milestones-container {
+        padding: 1rem 0;
+    }
+
+    .milestones-scroll {
+        padding: 2rem 1rem;
+        -webkit-overflow-scrolling: touch;
+        /* 增加iOS滚动流畅度 */
+    }
+
+    .milestones-track {
+        gap: 1.5rem;
+        padding: 1rem 1rem;
+    }
+
+    .milestone-item {
+        width: 280px;
+        padding-top: 1.5rem;
+    }
+
+    .milestone-card {
+        padding: 1.2rem;
+        transform: none;
+    }
+
+    .milestone-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .milestone-year {
+        font-size: 1rem;
+    }
+
+    .milestone-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+ 
+
+    .milestones-nav {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+        padding: 0;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .milestone-nav-btn {
+        width: 40px;
+        height: 40px;
+        background: var(--primary-color);
+        color: white;
+        opacity: 0.8;
+    }
+
+    .milestone-nav-btn:hover {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    .milestone-dot {
+        width: 16px;
+        height: 16px;
+    }
+
+    .milestone-dot::before {
+        animation: none;
+        /* 移动端禁用脉冲动画以提升性能 */
+    }
+
+    .milestones-track::before {
+        height: 3px;
+        /* 减小时间线的粗细 */
+    }
+
+    /* 优化触摸滑动体验 */
+    .milestones-scroll {
+        cursor: grab;
+        scroll-snap-type: x mandatory;
+    }
+
+    .milestone-item {
+        scroll-snap-align: center;
+    }
+
+    /* 添加滑动提示 */
+    .milestones-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 100%;
+        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.9));
+        pointer-events: none;
+        z-index: 4;
+    }
+}
+
+/* 针对更小屏幕的优化 */
+@media (max-width: 480px) {
+    .milestone-item {
+        width: 260px;
+    }
+
+    .milestone-card {
+        padding: 1rem;
+    }
+
+
+}

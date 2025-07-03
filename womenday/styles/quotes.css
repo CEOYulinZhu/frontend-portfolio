@@ -1,0 +1,238 @@
+.quotes-section {
+    background-color: #fff5f8;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.quotes-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, var(--background-color), transparent);
+    z-index: 1;
+}
+
+.quotes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.quotes-slider {
+    margin-top: 3rem;
+    position: relative;
+    padding: 0 60px;
+    max-width: 100%;
+}
+
+.quotes-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.quote-card {
+    min-width: 100%;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s ease;
+    flex: 0 0 100%;
+}
+
+.quote-card.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.quote-content {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.quote-content::before,
+.quote-content::after {
+    content: '"';
+    font-size: 4rem;
+    color: var(--primary-color);
+    opacity: 0.2;
+    position: absolute;
+    line-height: 1;
+}
+
+.quote-content::before {
+    top: -1rem;
+    left: -1rem;
+}
+
+.quote-content::after {
+    bottom: -2rem;
+    right: -1rem;
+    transform: rotate(180deg);
+}
+
+.quote-author {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.author-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.author-info {
+    flex: 1;
+}
+
+.author-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 0.3rem;
+}
+
+.author-title {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.quotes-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quote-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.quote-dot.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.quotes-arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.quote-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+    position: relative;
+    pointer-events: auto;
+}
+
+.quote-arrow-prev {
+    margin-left: -25px;
+}
+
+.quote-arrow-next {
+    margin-right: -25px;
+}
+
+.quote-arrow:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .quote-content {
+        font-size: 1.2rem;
+    }
+
+    .quotes-slider {
+        padding: 0;
+        margin: 0 auto;
+        max-width: 90%;
+    }
+
+    .quotes-arrows {
+        position: static;
+        margin-top: 2rem;
+        transform: none;
+        width: 100%;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .quote-arrow {
+        width: 40px;
+        height: 40px;
+        margin: 0;
+    }
+
+    .quote-arrow-prev,
+    .quote-arrow-next {
+        position: static;
+        margin: 0;
+    }
+
+    .quote-content::before,
+    .quote-content::after {
+        font-size: 3rem;
+    }
+
+    .quotes-nav {
+        max-width: 100%;
+        gap: 0.4rem;
+    }
+
+    .quote-dot {
+        width: 8px;
+        height: 8px;
+    }
+}

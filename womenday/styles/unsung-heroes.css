@@ -1,0 +1,189 @@
+.unsung-heroes-section {
+    position: relative;
+    padding: 6rem 0;
+    background-color: #fff8fa;
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.unsung-heroes-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at top right, rgba(255, 105, 180, 0.1), transparent 60%),
+        radial-gradient(circle at bottom left, rgba(240, 98, 146, 0.1), transparent 60%);
+    z-index: 1;
+}
+
+.section-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    z-index: 2;
+    text-align: center;
+}
+
+
+
+.heroes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    perspective: 1000px;
+}
+
+.hero-card {
+    position: relative;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 480px;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.hero-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: var(--gradient);
+    opacity: 0.1;
+}
+
+.hero-content {
+    position: relative;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.hero-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 10px 20px rgba(240, 98, 146, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.hero-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: var(--text-color);
+}
+
+.hero-title {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+
+
+.hero-achievements {
+    margin-top: auto;
+    width: 100%;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.6rem;
+    padding: 0.5rem 0.8rem;
+    background: rgba(255, 105, 180, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.achievement-item i {
+    color: var(--primary-color);
+    margin-right: 0.8rem;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+}
+
+.achievement-item span {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* 悬停效果 */
+.hero-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hero-card:hover .hero-icon {
+    transform: scale(1.1);
+}
+
+.hero-card:hover .achievement-item {
+    background: rgba(255, 105, 180, 0.08);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .section-content {
+        padding: 0 1.5rem;
+    }
+
+    .heroes-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .hero-card {
+        height: 500px;
+    }
+
+    .hero-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+
+    .hero-name {
+        font-size: 1.3rem;
+    }
+
+
+    .achievement-item {
+        padding: 0.4rem 0.6rem;
+    }
+
+    .achievement-item span {
+        font-size: 0.85rem;
+    }
+}
+
+/* 延迟加载动画 */
+.hero-card {
+    transition-delay: calc(var(--animation-order) * 0.1s);
+}

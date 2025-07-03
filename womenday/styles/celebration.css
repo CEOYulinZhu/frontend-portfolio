@@ -1,0 +1,177 @@
+/* 庆祝方式部分样式 */
+.celebration-section {
+    background-color: #fff;
+    position: relative;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.celebration-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(255, 105, 180, 0.1), transparent 60%),
+        radial-gradient(circle at bottom left, rgba(240, 98, 146, 0.1), transparent 60%);
+    z-index: 0;
+}
+
+.celebration-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.celebration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.celebration-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.celebration-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.celebration-card-header {
+    padding: 1.5rem;
+    background: var(--gradient);
+    color: white;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.celebration-card-header::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background: var(--primary-color);
+    transform-origin: center;
+    rotate: 45deg;
+    z-index: -1;
+}
+
+.celebration-card-body {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.country-name {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.country-flag {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.celebration-card-body p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.celebration-card-body ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: auto;
+}
+
+.celebration-card-body li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    align-items: center;
+}
+
+.celebration-card-body li:last-child {
+    border-bottom: none;
+}
+
+.celebration-card-body li i {
+    color: var(--primary-color);
+    margin-right: 0.8rem;
+}
+
+.celebration-card-footer {
+    padding: 1rem 2rem;
+    background: #f9f9f9;
+    font-style: italic;
+    color: #777;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+    flex-shrink: 0;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .celebration-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 动画效果 */
+.celebration-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.celebration-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 延迟加载动画 */
+.celebration-card:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.celebration-card:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.celebration-card:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.celebration-card:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.celebration-card:nth-child(6) {
+    transition-delay: 0.5s;
+}
